@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import { API } from 'aws-amplify';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
-import { listVisitor } from './graphql/queries';
+import { listVisitors } from './graphql/queries';
 import { createVisitor as createVisitorMutation, deleteVisitor as deleteVisitorMutation } from './graphql/mutations';
 
 const initialFormState = { visName: '', visEmail: '' }
@@ -16,8 +16,8 @@ function App() {
   }, []);
 
   async function fetchVisitor() {
-    const apiData = await API.graphql({ query: listVisitor });
-    setVisitor(apiData.data.listVisitor.items);
+    const apiData = await API.graphql({ query: listVisitors });
+    setVisitor(apiData.data.listVisitors.items);
   }
 
   async function createVisitor() {
