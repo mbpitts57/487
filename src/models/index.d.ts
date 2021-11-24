@@ -4,6 +4,10 @@ import { ModelInit, MutableModel, PersistentModelConstructor } from "@aws-amplif
 
 
 
+type PerAssessmentMetaData = {
+  readOnlyFields: 'createdAt' | 'updatedAt';
+}
+
 type AdminMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
@@ -12,15 +16,24 @@ type VisitorMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
 
-type NoteMetaData = {
-  readOnlyFields: 'createdAt' | 'updatedAt';
+export declare class PerAssessment {
+  readonly id: string;
+  readonly p_answer1: string;
+  readonly p_answer2: string;
+  readonly p_answer3: string;
+  readonly p_answer5: string;
+  readonly p_answer6: string;
+  readonly createdAt?: string;
+  readonly updatedAt?: string;
+  constructor(init: ModelInit<PerAssessment, PerAssessmentMetaData>);
+  static copyOf(source: PerAssessment, mutator: (draft: MutableModel<PerAssessment, PerAssessmentMetaData>) => MutableModel<PerAssessment, PerAssessmentMetaData> | void): PerAssessment;
 }
 
 export declare class Admin {
   readonly id: string;
-  readonly adminEmail?: string;
-  readonly adminPass?: string;
-  readonly adminLevel?: number;
+  readonly adminEmail: string;
+  readonly adminPass: string;
+  readonly adminLevel: number;
   readonly createdAt?: string;
   readonly updatedAt?: string;
   constructor(init: ModelInit<Admin, AdminMetaData>);
@@ -30,19 +43,10 @@ export declare class Admin {
 export declare class Visitor {
   readonly id: string;
   readonly visName: string;
-  readonly visEmail?: string;
+  readonly visEmail: string;
+  readonly VisPerAssessment: PerAssessment;
   readonly createdAt?: string;
   readonly updatedAt?: string;
   constructor(init: ModelInit<Visitor, VisitorMetaData>);
   static copyOf(source: Visitor, mutator: (draft: MutableModel<Visitor, VisitorMetaData>) => MutableModel<Visitor, VisitorMetaData> | void): Visitor;
-}
-
-export declare class Note {
-  readonly id: string;
-  readonly name: string;
-  readonly description?: string;
-  readonly createdAt?: string;
-  readonly updatedAt?: string;
-  constructor(init: ModelInit<Note, NoteMetaData>);
-  static copyOf(source: Note, mutator: (draft: MutableModel<Note, NoteMetaData>) => MutableModel<Note, NoteMetaData> | void): Note;
 }
