@@ -7,11 +7,6 @@ import { createVisitor as createVisitorMutation,
   // deleteVisitor as deleteVisitorMutation 
 } from './graphql/mutations';
 
-// adding auth
-// import Amplify, { Auth } from 'aws-amplify';
-// import awsconfig from './aws-exports';
-// Amplify.configure(awsconfig);
-
 const initialFormState = { visName: '', visEmail: '' }
 
 function InsertVisitor() {
@@ -51,7 +46,7 @@ function InsertVisitor() {
             />
         <br></br>
 
-        <button onClick={createVisitor}>Submit Assessment</button>
+        <button type="submit" onClick={createVisitor}>Submit Assessment</button>
       </div>
     );
 }
