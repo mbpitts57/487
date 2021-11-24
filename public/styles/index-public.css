@@ -164,10 +164,21 @@ hr {
   margin: auto;
   justify-content: center;
 }
-.user-input-field textarea {
-  resize: none;
-}
 .user-input-field div {
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+  flex-direction: column;
+}
+
+.user-input-field-2 {
+  display: none;
+  margin-top: 50px !important;
+  padding: 20px;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 50px !important;
+}
+.user-input-field-2 div {
   margin-top: 0.2em;
   margin-bottom: 0.2em;
   flex-direction: column;

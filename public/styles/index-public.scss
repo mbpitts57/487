@@ -113,9 +113,16 @@ hr {
     @include partial.container-styling();
     @include partial.container-background();
 
-    textarea {
-        resize: none;
+    div {
+        margin-top:.2em;
+        margin-bottom:.2em;
+        flex-direction: column;
     }
+}
+
+.user-input-field-2 {
+    display: none;
+    @include partial.container-styling();
 
     div {
         margin-top:.2em;

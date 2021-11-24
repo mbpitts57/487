@@ -1,0 +1,23 @@
+@use "partial";
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cantarell&family=Chakra+Petch:wght@300;400&family=Play&family=Rajdhani:wght@300;400&family=Saira+Condensed:wght@100;200&family=Source+Code+Pro:wght@200;300&display=swap');
+
+.p-text {
+  width: 80%;
+}
+
+.user-input-field {
+  display: none;
+  @include partial.container-styling();
+  @include partial.container-background();
+
+  textarea {
+      resize: none;
+  }
+
+  div {
+      margin-top:.2em;
+      margin-bottom:.2em;
+      flex-direction: column;
+  }
+}

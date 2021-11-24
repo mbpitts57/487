@@ -48,18 +48,23 @@ function InsertVisitor() {
   // }
 
   return (
-    <div className="InsertVisitor">
-      <input
-        onChange={e => setFormData({ ...formData, 'visName': e.target.value})}
-        placeholder="Name:"
-        value={formData.visName}
-      />
-      <input
-        onChange={e => setFormData({ ...formData, 'visEmail': e.target.value})}
-        placeholder="Email:"
-        value={formData.visEmail}
-      />
-      <button onClick={createVisitor}>Create Visitor</button>
+    <div class="user-input-field" className="InsertVisitor">
+      <label for="visName" class="p-text">Please Enter Your Full Name:</label>
+          <input 
+            onChange={e => setFormData({ ...formData, 'visName': e.target.value})}
+            placeholder=""
+            value={formData.visName}
+          />
+      <br></br>
+      <label for="visEmail" class="p-text">Also Kindly Enter Your Email:</label>
+          <input 
+            onChange={e => setFormData({ ...formData, 'visEmail': e.target.value})}
+            placeholder=""
+            value={formData.visEmail}
+          />
+      <br></br>
+
+      <button onClick={createVisitor}>Submit Assessment</button>
       {/* --------------------------------------------------------- */}
       {/* <span id="baby"> BABY BABY BABY BABY BABY </span>
       <button onClick={hideBaby}>Hide Baby</button> */}
