@@ -18,7 +18,7 @@ function App() {
   async function fetchVisitor() {
     const apiData = await API.graphql({ query: listVisitors });
     setVisitor(apiData.data.listVisitors.items);
-  }
+  } 
 
   async function createVisitor() {
     if (!formData.visName || !formData.visEmail) return;
