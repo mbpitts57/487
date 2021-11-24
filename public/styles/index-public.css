@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cantarell&family=Chakra+Petch:wght@300;400&family=Play&family=Rajdhani:wght@300;400&family=Saira+Condensed:wght@100;200&family=Source+Code+Pro:wght@200;300&display=swap");
+body, html {
+  height: 100%;
+  text-align: center;
+  background: #8797af;
+  font-family: "Inconsolata", monospace;
+  margin: 0px;
+}
+
+hr {
+  border: 1px solid #dbdbdb;
+  fill: #dbdbdb;
+  margin-bottom: 25px;
+  width: 95%;
+}
+
+.logo-img {
+  max-height: 2.2em;
+  max-width: 2.2em;
+  background: #9b9b9b;
+  margin-left: 0.6em;
+  border-style: outset;
+  border-width: 2px;
+  border-color: #b4b4b4;
+}
+
+.header-div {
+  font-family: "Play", sans-serif;
+  display: flex;
+  padding: 0px 20px;
+  color: white;
+  margin-top: 1em !important;
+  font-size: 1.8em;
+  align-items: center;
+  background: #b8b8b8;
+  box-shadow: 10px 10px 2px #5c6777;
+  border-style: outset;
+  border-width: 5px;
+  border-color: #cecece;
+  width: 50%;
+  margin: auto;
+  justify-content: center;
+}
+
+.logo-evariste-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.span-landing {
+  background: #b8b8b8;
+  box-shadow: 10px 10px 2px #5c6777;
+  border-style: outset;
+  border-width: 5px;
+  border-color: #cecece;
+  width: 50%;
+  margin: auto;
+  justify-content: center;
+  margin-top: 50px !important;
+  padding: 20px;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 50px !important;
+}
+
+.personality-assessment {
+  display: none;
+  background: #b8b8b8;
+  box-shadow: 10px 10px 2px #5c6777;
+  border-style: outset;
+  border-width: 5px;
+  border-color: #cecece;
+  width: 50%;
+  margin: auto;
+  justify-content: center;
+  margin-top: 50px !important;
+  padding: 20px;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 50px !important;
+}
+
+.cognitive-assessment {
+  display: none;
+  background: #b8b8b8;
+  box-shadow: 10px 10px 2px #5c6777;
+  border-style: outset;
+  border-width: 5px;
+  border-color: #cecece;
+  width: 50%;
+  margin: auto;
+  justify-content: center;
+  margin-top: 50px !important;
+  padding: 20px;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 50px !important;
+}
+
+.p-assessment-h1 {
+  color: #515b69;
+}
+
+.text-muted {
+  font-size: 0.9em;
+}
+
+.p-text {
+  width: 80%;
+}
+
+.textarea-answer {
+  margin-top: 2em;
+  width: 65%;
+  height: 75px;
+  resize: none;
+}
+
+.radio-btn-flex {
+  margin-top: 0.6em;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.radio-btn-flex div {
+  display: flex;
+  flex-direction: row;
+}
+
+.checkbox-btn-flex {
+  margin-top: 0.6em;
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+}
+.checkbox-btn-flex div {
+  display: flex;
+  flex-direction: row;
+  vertical-align: bottom;
+  margin: 0;
+  padding: 0;
+}
+
+.continue-btn {
+  margin-top: 1.2em;
+}
+
+.user-input-field {
+  display: none;
+  margin-top: 50px !important;
+  padding: 20px;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 50px !important;
+  background: #b8b8b8;
+  box-shadow: 10px 10px 2px #5c6777;
+  border-style: outset;
+  border-width: 5px;
+  border-color: #cecece;
+  width: 50%;
+  margin: auto;
+  justify-content: center;
+}
+.user-input-field textarea {
+  resize: none;
+}
+.user-input-field div {
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+  flex-direction: column;
+}
+
+.footer-bar {
+  background: #292929;
+  width: 100%;
+  margin: 0;
+  height: 3em;
+}
+
+.footer-text {
+  color: white;
+}
+
+.footer-text-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.footer-text-flex div {
+  display: flex;
+  flex-direction: row;
+  margin-right: 58em !important;
+  justify-content: flex-start;
+}
+.footer-text-flex a {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  padding: 0;
+  margin-left: 0em !important;
+  align-items: center;
+}
