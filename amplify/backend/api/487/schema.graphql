@@ -1,0 +1,11 @@
+type Visitor @model {
+  id: ID!
+  visName: String!
+  visEmail: String
+}
+
+type Note @model {
+  id: ID!
+  name: String!
+  description: String
+}
