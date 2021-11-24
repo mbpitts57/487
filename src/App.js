@@ -2,58 +2,58 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import { API } from 'aws-amplify';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
-import { listVisitors } from './graphql/queries';
-import { createVisitor as createVisitorMutation, deleteVisitor as deleteVisitorMutation } from './graphql/mutations';
+import { listNotes } from './graphql/queries';
+import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
 
-const initialFormState = { visName: '', visEmail: '' }
+const initialFormState = { name: '', description: '' }
 
 function App() {
-  const [Visitor, setVisitor] = useState([]);
+  const [notes, setNotes] = useState([]);
   const [formData, setFormData] = useState(initialFormState);
 
   useEffect(() => {
-    fetchVisitor();
+    fetchNotes();
   }, []);
 
-  async function fetchVisitor() {
-    const apiData = await API.graphql({ query: listVisitors });
-    setVisitor(apiData.data.listVisitors.items);
-  } 
+  async function fetchNotes() {
+    const apiData = await API.graphql({ query: listNotes });
+    setNotes(apiData.data.listNotes.items);
+  }
 
-  async function createVisitor() {
-    if (!formData.visName || !formData.visEmail) return;
-    await API.graphql({ query: createVisitorMutation, variables: { input: formData } });
-    setVisitor([ ...Visitor, formData ]);
+  async function createNote() {
+    if (!formData.name || !formData.description) return;
+    await API.graphql({ query: createNoteMutation, variables: { input: formData } });
+    setNotes([ ...notes, formData ]);
     setFormData(initialFormState);
   }
 
-  async function deleteVisitor({ id }) {
-    const newVisitorArray = Visitor.filter(Visitor => Visitor.id !== id);
-    setVisitor(newVisitorArray);
-    await API.graphql({ query: deleteVisitorMutation, variables: { input: { id } }});
+  async function deleteNote({ id }) {
+    const newNotesArray = notes.filter(note => note.id !== id);
+    setNotes(newNotesArray);
+    await API.graphql({ query: deleteNoteMutation, variables: { input: { id } }});
   }
 
   return (
     <div className="App">
-      <h1>My Visitor App</h1>
+      <h1>My Notes App</h1>
       <input
-        onChange={e => setFormData({ ...formData, 'visName': e.target.value})}
-        placeholder="Visitor name"
-        value={formData.visName}
+        onChange={e => setFormData({ ...formData, 'name': e.target.value})}
+        placeholder="Note name"
+        value={formData.name}
       />
       <input
-        onChange={e => setFormData({ ...formData, 'visEmail': e.target.value})}
-        placeholder="Visitor visEmail"
-        value={formData.visEmail}
+        onChange={e => setFormData({ ...formData, 'description': e.target.value})}
+        placeholder="Note description"
+        value={formData.description}
       />
-      <button onClick={createVisitor}>Create Visitor</button>
+      <button onClick={createNote}>Create Note</button>
       <div style={{marginBottom: 30}}>
         {
-          Visitor.map(Visitor => (
-            <div key={Visitor.id || Visitor.visName}>
-              <h2>{Visitor.visName}</h2>
-              <p>{Visitor.visEmail}</p>
-              <button onClick={() => deleteVisitor(Visitor)}>Delete Visitor</button>
+          notes.map(note => (
+            <div key={note.id || note.name}>
+              <h2>{note.name}</h2>
+              <p>{note.description}</p>
+              <button onClick={() => deleteNote(note)}>Delete note</button>
             </div>
           ))
         }
