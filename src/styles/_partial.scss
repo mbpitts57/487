@@ -1,0 +1,26 @@
+@mixin body-html() {
+    height: 100%;
+    text-align: center;
+    background: rgb(135, 151, 175);
+    font-family: 'Inconsolata', monospace;
+    margin: 0px;
+}
+
+@mixin container-background() {
+    background: rgb(184, 184, 184);
+    box-shadow: 10px 10px 2px rgb(92, 103, 119);
+    border-style: outset;
+    border-width: 5px;
+    border-color:rgb(206, 206, 206);
+    width: 50%;
+    margin: auto;
+    justify-content: center;
+    }
+
+@mixin container-styling() {
+    margin-top: 50px !important;
+    padding: 20px;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 50px !important;
+    }

@@ -1,64 +1,80 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import './styles/App.css';
 import { API } from 'aws-amplify';
-import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
-import { listNotes } from './graphql/queries';
-import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
+import { withAuthenticator, 
+  // AmplifySignOut 
+} from '@aws-amplify/ui-react';
+import { listVisitors } from './graphql/queries';
+import { createVisitor as createVisitorMutation, deleteVisitor as deleteVisitorMutation } from './graphql/mutations';
 
-const initialFormState = { name: '', description: '' }
+// adding auth
+// import Amplify, { Auth } from 'aws-amplify';
+// import awsconfig from './aws-exports';
+// Amplify.configure(awsconfig);
+
+const initialFormState = { visName: '', visEmail: '' }
 
 function App() {
-  const [notes, setNotes] = useState([]);
+  const [Visitors, setVisitors] = useState([]);
   const [formData, setFormData] = useState(initialFormState);
 
   useEffect(() => {
-    fetchNotes();
+    fetchVisitors();
   }, []);
 
-  async function fetchNotes() {
-    const apiData = await API.graphql({ query: listNotes });
-    setNotes(apiData.data.listNotes.items);
+  async function fetchVisitors() {
+    const apiData = await API.graphql({ query: listVisitors });
+    setVisitors(apiData.data.listVisitors.items);
   }
 
-  async function createNote() {
-    if (!formData.name || !formData.description) return;
-    await API.graphql({ query: createNoteMutation, variables: { input: formData } });
-    setNotes([ ...notes, formData ]);
+  async function createVisitor() {
+    if (!formData.visName || !formData.visEmail) return;
+    await API.graphql({ query: createVisitorMutation, variables: { input: formData } });
+    setVisitors([ ...Visitors, formData ]);
     setFormData(initialFormState);
   }
 
-  async function deleteNote({ id }) {
-    const newNotesArray = notes.filter(note => note.id !== id);
-    setNotes(newNotesArray);
-    await API.graphql({ query: deleteNoteMutation, variables: { input: { id } }});
+  async function deleteVisitor({ id }) {
+    const newVisitorsArray = Visitors.filter(Visitor => Visitor.id !== id);
+    setVisitors(newVisitorsArray);
+    await API.graphql({ query: deleteVisitorMutation, variables: { input: { id } }});
+  }
+
+  async function hideBaby(){
+    const baby = document.getElementById("baby");
+    baby.style.display = 'none';
   }
 
   return (
     <div className="App">
-      <h1>My Notes App</h1>
+      <h1>My Visitors App</h1>
       <input
-        onChange={e => setFormData({ ...formData, 'name': e.target.value})}
-        placeholder="Note name"
-        value={formData.name}
+        onChange={e => setFormData({ ...formData, 'visName': e.target.value})}
+        placeholder="Name:"
+        value={formData.visName}
       />
       <input
-        onChange={e => setFormData({ ...formData, 'description': e.target.value})}
-        placeholder="Note description"
-        value={formData.description}
+        onChange={e => setFormData({ ...formData, 'visEmail': e.target.value})}
+        placeholder="Email:"
+        value={formData.visEmail}
       />
-      <button onClick={createNote}>Create Note</button>
+      <button onClick={createVisitor}>Create Visitor</button>
+      {/* --------------------------------------------------------- */}
+      <span id="baby"> BABY BABY BABY BABY BABY </span>
+      <button onClick={hideBaby}>Hide Baby</button>
+      {/* --------------------------------------------------------- */}
       <div style={{marginBottom: 30}}>
         {
-          notes.map(note => (
-            <div key={note.id || note.name}>
-              <h2>{note.name}</h2>
-              <p>{note.description}</p>
-              <button onClick={() => deleteNote(note)}>Delete note</button>
+          Visitors.map(Visitor => (
+            <div key={Visitor.id || Visitor.visName}>
+              <h2>{Visitor.visName}</h2>
+              <p>{Visitor.visEmail}</p>
+              <button onClick={() => deleteVisitor(Visitor)}>Delete Visitor</button>
             </div>
           ))
         }
       </div>
-      <AmplifySignOut />
+      {/* <AmplifySignOut/> */}
     </div>
   );
 }

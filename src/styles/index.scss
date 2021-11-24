@@ -1,0 +1,164 @@
+@use "partial";
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cantarell&family=Chakra+Petch:wght@300;400&family=Play&family=Rajdhani:wght@300;400&family=Saira+Condensed:wght@100;200&family=Source+Code+Pro:wght@200;300&display=swap');
+
+body,html {
+    @include partial.body-html();
+    }
+
+hr {
+    border: 1px solid #dbdbdb;
+    fill:#dbdbdb;
+    margin-bottom: 25px;
+    width: 95%;
+    }
+
+.logo-img {
+    max-height: 2.2em;
+    max-width: 2.2em;
+    background: rgb(155, 155, 155);
+    margin-left: .6em;
+    border-style: outset;
+    border-width: 2px;
+    border-color:rgb(180, 180, 180);
+}
+
+.header-div {
+    font-family: 'Play', sans-serif;
+    display: flex;
+    padding: 0px 20px;
+    color: white;
+    margin-top: 1em !important;
+    font-size: 1.8em;
+    align-items: center;
+    @include partial.container-background();
+}
+
+.logo-evariste-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.span-landing{
+    @include partial.container-background();
+    @include partial.container-styling();
+}
+
+.personality-assessment {
+    display: none;
+    @include partial.container-background();
+    @include partial.container-styling();
+}
+
+.cognitive-assessment {
+    display: none;
+    @include partial.container-background();
+    @include partial.container-styling();
+}
+
+.p-assessment-h1 {
+    color: rgb(81, 91, 105);
+}
+
+.text-muted {
+    font-size: .9em;
+}
+
+.p-text {
+    width: 80%;
+}
+
+.textarea-answer {
+    margin-top: 2em;
+    width: 65%;
+    height: 75px;
+    resize: none;
+}
+
+.radio-btn-flex {
+    margin-top: .6em;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    div {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.checkbox-btn-flex {
+    margin-top: .6em;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+
+    div {
+        display: flex;
+        flex-direction: row;
+        vertical-align: bottom;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.continue-btn {
+    margin-top: 1.2em;
+}
+
+.user-input-field {
+    display: none;
+    @include partial.container-styling();
+    @include partial.container-background();
+
+    textarea {
+        resize: none;
+    }
+
+    div {
+        margin-top:.2em;
+        margin-bottom:.2em;
+        flex-direction: column;
+    }
+}
+
+.footer-bar {
+    background: rgb(41, 41, 41);
+    width: 100%;
+    margin: 0;
+    height: 3em;
+}
+
+.footer-text {
+    color: white;
+}
+
+.footer-text-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    // styles 'email/joshua@system9.io'
+    div {
+        display: flex;
+        flex-direction: row;
+        margin-right: 58em !important;
+        justify-content: flex-start;
+    }
+
+    // styles 'administrators' link
+    a {
+        display: flex;
+        flex-direction: row;
+        text-decoration: none;
+        padding: 0;
+        margin-left: 0em !important; 
+        align-items: center;
+    }
+}
+
+
+

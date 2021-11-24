@@ -1,0 +1,75 @@
+@use "../../src/styles/partial";
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cantarell&family=Chakra+Petch:wght@300;400&family=Play&family=Rajdhani:wght@300;400&family=Saira+Condensed:wght@100;200&family=Source+Code+Pro:wght@200;300&display=swap');
+
+body,html {
+    @include partial.body-html();
+    }
+
+.admin-terminal-container{
+    display:flex;
+    width: 75%;
+    margin: auto;
+    background: rgb(184, 184, 184); 
+    box-shadow: 10px 10px 2px rgb(92, 103, 119);
+    border-style: outset;
+    border-width: 5px;
+    border-color:rgb(206, 206, 206);
+    flex-direction: column;
+    height: 40em;
+}
+
+.admin-terminal-title{
+    font-size: 3.5em;
+    padding: 2%;
+    margin: 1px;
+    background: black;
+    color: white;
+}
+
+.admin-terminal-content{
+    display:flex;
+    flex-direction: row;
+}
+
+.admin-terminal-sidebar{
+    display:flex;
+    flex-direction: column;
+    background: rgb(184, 184, 184);
+    margin-left: 1%;
+    margin-top: 1%;
+
+    button{
+        height: 6em;
+        width: 6em;
+        margin: .5em;
+        background:rgb(206, 206, 206);
+        border-style: outset;
+        border-width: 2px;
+        border-color:rgb(206, 206, 206);
+        font-family: 'Inconsolata', monospace;
+    }
+}
+
+.admin-terminal-main{
+    margin-left: 1% !important;
+    margin: .5em;
+    margin-right: 1%;
+    margin-top: 1%;
+}
+
+.main-user-results{
+    display: none;
+}
+
+.main-analytics{
+    display: none;
+}
+
+.main-acct-mgmt{
+    display: none;
+}
+
+.main-advanced{
+    display: none;
+}
