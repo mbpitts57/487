@@ -56,4 +56,4 @@ function InsertVisitor() {
     );
 }
 
-export default withAuthenticator(InsertVisitor);
+export default InsertVisitor;
