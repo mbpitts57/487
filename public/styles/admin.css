@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cantarell&family=Chakra+Petch:wght@300;400&family=Play&family=Rajdhani:wght@300;400&family=Saira+Condensed:wght@100;200&family=Source+Code+Pro:wght@200;300&display=swap");
+body, html {
+  height: 100%;
+  text-align: center;
+  background: #8797af;
+  font-family: "Inconsolata", monospace;
+  margin: 0px;
+}
+
+.admin-login-container {
+  display: flex;
+  margin-top: 50px !important;
+  padding: 20px;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 50px !important;
+  background: #b8b8b8;
+  box-shadow: 10px 10px 2px #5c6777;
+  border-style: outset;
+  border-width: 5px;
+  border-color: #cecece;
+  width: 50%;
+  margin: auto;
+  justify-content: center;
+}
+.admin-login-container div {
+  padding: 20px;
+  width: 50%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.admin-login-container span {
+  display: flex;
+  padding: 20px;
+  width: 50%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.fp-field {
+  display: none;
+}

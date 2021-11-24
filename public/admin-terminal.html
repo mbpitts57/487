@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- importing index.css -->
+        <link rel="stylesheet" href="styles/admin-terminal.css">
+
+        <!-- importing favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+        <link rel="manifest" href="favicon/site.webmanifest">
+    
+        <!-- title of webpage in browser -->
+        <title>Evariste Administrator Portal</title>
+    </head>
+    
+    <body>
+        <main>
+            <a href="index.html">evariste home</a>
+            <a href="admin.html">admin log in</a>
+
+            <div class="admin-terminal-container">
+                <span class="admin-terminal-title"><Strong>Administrative Portal</Strong></span>
+                <div class="admin-terminal-content">
+                    <nav class="admin-terminal-sidebar">
+                        <button type="button" onclick="show_user_results();"> user results </button>
+                        <button type="button" onclick="show_analytics();"> analytics </button>
+                        <button type="button" onclick="show_acct_mgmt();"> account management </button>
+                        <button type="button" onclick="show_advanced();"> advanced </button>
+                    </nav>
+                    <div class="admin-terminal-main">
+                        <div class="main-user-results" id="main-user-results">
+                            <div class="search-bar">((search icon)) Search: </div>
+                            <div class="filter-users">((button, dropdown menu)Filter Results</div>
+                            [search bar, 
+                            filter by scores, name alphabetical, most recent, oldest
+                            rows of all user inputs fetched from database]
+                        </div>
+                        <div class="main-analytics" id="main-analytics">
+                            [visualisations/graphs, 
+                            button where data can be downloaded as a csv file if clicked]
+                        </div>
+                        <div class="main-content" id="main-acct-mgmt">
+                            [request password change link to be sent to email]
+                        </div>
+                        <div class="main-content" id="main-advanced">
+                            [tools for advanced admins.
+                            can create new accounts, 
+                            can send reset password links to admin emails
+                            can view list of all admin accounts]
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    
+        <footer>
+    
+        </footer>
+        <!-- importing admin-terminal.js -->
+        <script type="text/javascript" src="./scripts/admin-terminal.js"></script>
+    </body>
+</html>

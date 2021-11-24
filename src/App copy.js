@@ -5,9 +5,7 @@ import { withAuthenticator,
   // AmplifySignOut 
 } from '@aws-amplify/ui-react';
 import { listVisitors } from './graphql/queries';
-import { createVisitor as createVisitorMutation, 
-  // deleteVisitor as deleteVisitorMutation 
-} from './graphql/mutations';
+import { createVisitor as createVisitorMutation, deleteVisitor as deleteVisitorMutation } from './graphql/mutations';
 
 // adding auth
 // import Amplify, { Auth } from 'aws-amplify';
@@ -16,7 +14,7 @@ import { createVisitor as createVisitorMutation,
 
 const initialFormState = { visName: '', visEmail: '' }
 
-function InsertVisitor() {
+function App() {
   const [Visitors, setVisitors] = useState([]);
   const [formData, setFormData] = useState(initialFormState);
 
@@ -36,19 +34,19 @@ function InsertVisitor() {
     setFormData(initialFormState);
   }
 
-  // async function deleteVisitor({ id }) {
-  //   const newVisitorsArray = Visitors.filter(Visitor => Visitor.id !== id);
-  //   setVisitors(newVisitorsArray);
-  //   await API.graphql({ query: deleteVisitorMutation, variables: { input: { id } }});
-  // }
+  async function deleteVisitor({ id }) {
+    const newVisitorsArray = Visitors.filter(Visitor => Visitor.id !== id);
+    setVisitors(newVisitorsArray);
+    await API.graphql({ query: deleteVisitorMutation, variables: { input: { id } }});
+  }
 
-  // async function hideBaby(){
-  //   const baby = document.getElementById("baby");
-  //   baby.style.display = 'none';
-  // }
+  async function hideBaby(){
+    const baby = document.getElementById("baby");
+    baby.style.display = 'none';
+  }
 
   return (
-    <div className="InsertVisitor">
+    <div className="App">
       <input
         onChange={e => setFormData({ ...formData, 'visName': e.target.value})}
         placeholder="Name:"
@@ -61,10 +59,10 @@ function InsertVisitor() {
       />
       <button onClick={createVisitor}>Create Visitor</button>
       {/* --------------------------------------------------------- */}
-      {/* <span id="baby"> BABY BABY BABY BABY BABY </span>
-      <button onClick={hideBaby}>Hide Baby</button> */}
+      <span id="baby"> BABY BABY BABY BABY BABY </span>
+      <button onClick={hideBaby}>Hide Baby</button>
       {/* --------------------------------------------------------- */}
-      {/* <div style={{marginBottom: 30}}>
+      <div style={{marginBottom: 30}}>
         {
           Visitors.map(Visitor => (
             <div key={Visitor.id || Visitor.visName}>
@@ -74,9 +72,9 @@ function InsertVisitor() {
             </div>
           ))
         }
-      </div> */}
+      </div>
     </div>
   );
 }
 
-export default withAuthenticator(InsertVisitor);
+export default withAuthenticator(App);

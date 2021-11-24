@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css';
-import App from './App';
+import InsertVisitor from './App';
 import reportWebVitals from './reportWebVitals';
 
 import Amplify from 'aws-amplify';
@@ -10,10 +10,12 @@ Amplify.configure(config);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App/>
+    <InsertVisitor/>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('visitor-info')
 );
+
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
