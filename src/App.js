@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import './styles/App.css';
+import './styles/App.css';import './styles/App.css';
 import { API } from 'aws-amplify';
-// import { withAuthenticator, AmplifySignOut} from '@aws-amplify/ui-react';
 import { listVisitors } from './graphql/queries';
-import { createVisitor as createVisitorMutation, 
-  // deleteVisitor as deleteVisitorMutation 
-} from './graphql/mutations';
+import { createVisitor as createVisitorMutation } from './graphql/mutations';
 
 const initialFormState = { visName: '', visEmail: '' }
 
@@ -31,14 +28,14 @@ function InsertVisitor() {
     
     return (
       <div class="user-input-field" className="InsertVisitor">
-        <label for="visName" class="p-text">Please Enter Your Full Name:</label>
+        <label className="p-text">Please Enter Your Full Name:</label>
             <input 
               onChange={e => setFormData({ ...formData, 'visName': e.target.value})}
               placeholder=""
               value={formData.visName}
             />
         <br></br>
-        <label for="visEmail" class="p-text">Also Kindly Enter Your Email:</label>
+        <label className="p-text">Also Kindly Enter Your Email:</label>
             <input 
               onChange={e => setFormData({ ...formData, 'visEmail': e.target.value})}
               placeholder=""
