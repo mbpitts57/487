@@ -1,21 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- <head> -->
-    <!-- <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
+    <!-- <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" /> -->
-    <!-- importing index.css -->
-    <!-- <link rel="stylesheet" href="../src/styles/index.css"> -->
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
     <!-- <link rel="manifest" href="%PUBLIC_URL%/manifest.json" /> -->
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
@@ -26,8 +12,6 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <!-- <title>React App</title> -->
-  <!-- </head> -->
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,7 +24,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Cantarell&family=Chakra+Petch:wght@300;400&family=Play&family=Rajdhani:wght@300;400&family=Saira+Condensed:wght@100;200&family=Source+Code+Pro:wght@200;300&display=swap" rel="stylesheet">
 
     <!-- importing index.css -->
-    <!-- <link rel="stylesheet" href="../src/styles/index.css"> -->
     <link rel="stylesheet" href="./styles/index-public.css">
 
     <!-- importing favicon -->
@@ -54,15 +37,12 @@
 </head>
 
 <body>
+    <div class="index-page" id="index-page">
     <!-- header container that holds evariste text and logo -->
+    <!-- <div id="header-div" class="header-div"></div> -->
     <div class="header-div">
-      <header>
-          <div class="logo-evariste-row">
-              <h1>Evariste</h1>
-              <img class="logo-img" src="images/evarist-logo-3.png">
-          </div>
-      </header>
-      </div>
+      <header><div class="logo-evariste-row"><h1>Evariste</h1><img src="images/evarist-logo-3.png" class="logo-img" alt="Evariste Logo"/></div></header>
+    </div>
 
       <!-- beginning of main content -->
       <main>
@@ -77,7 +57,7 @@
         </div>
 
         <form>
-          <!-- personality assessment portion of form. visible upon page opening -->
+            <!-- personality assessment portion of form. visible upon page opening -->
             <span>
             <div class="a1-form" id="form-part-1">
                 <div class="personality-assessment" id="per">
@@ -605,8 +585,9 @@
             </div>
             </span>
           
-                      <!-- submit/user info input portion of form, visible after clicking 'continue' button on cognitive assessment -->
-                      <div class="s1-form" id="form-part-3">
+            <!-- submit/user info input portion of form, visible after clicking 'continue' button on cognitive assessment -->
+            <span>
+            <div class="s1-form" id="form-part-3">
                         <div class="user-input-field" id="visitor-info">
                           <!-- <div>
                             <label for="visitorName" class="p-text">Please Enter Your Full Name:</label>
@@ -627,25 +608,50 @@
                           </div>
                         </div>
                         
-                    </div>
+            </div>
+            </span>
         </form>
       </main>
           
-                  <!-- footer  -------------------------------------------->
-                  <footer class="footer-bar">
-                      <div class="footer-text-flex">
-                        <div>
-                          <p class="footer-text"><strong>Email/</strong></p>
-                          <p class="footer-text">joshua@evariste.io</p>
-                        </div>
-                        <span>
-                          <a href="admin-terminal.html" class="footer-text">Administrators</p>
-                        </span>
-                      </div>
-                  </footer>
+            <!-- footer  -------------------------------------------->
+            <footer class="footer-bar">
+               <div class="footer-text-flex">
+                  <div>
+                    <p class="footer-text"><strong>Email/</strong></p>
+                    <p class="footer-text">joshua@evariste.io</p>
+                  </div>
+                  <span>
+                    <button type="button" class="transparent-btn" onclick="show_admin_terminal();" class="footer-text">Administrators</p>
+                  </span>
+                </div>
+            </footer>
+    </div>
 
-                  <script type="text/javascript" src="./scripts/index-public.js"></script>
-                  <script type="text/javascript" src="../src/index.js"></script>
+
+    <div class="admin-terminal" id="admin-terminal">
+      <div class="admin-terminal-container">
+          <span class="admin-terminal-title"><Strong>Administrative Portal</Strong></span>
+          <div class="admin-terminal-content">
+              <nav class="admin-terminal-sidebar">
+                  <button type="button" onclick="show_user_results();"> user results </button>
+                  <button type="button" onclick="show_analytics();"> analytics </button>
+                  <button type="button" onclick="show_acct_mgmt();"> account management </button>
+                  <button type="button" onclick="show_advanced();"> advanced </button>
+              </nav>
+              <div class="admin-terminal-main">
+                  <div class="main-user-results" id="main-user-results"></div>
+                  <div class="main-analytics" id="main-analytics"></div>
+                  <div class="main-acct-mgmt" id="main-acct-mgmt"></div>
+                  <div class="main-advanced" id="main-advanced"></div>
+              </div>
+          </div>
+          <button type="button" class="transparent-btn" onclick="hide_admin_terminal();" class="footer-text">Landing Page</p>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="./scripts/index-public.js"></script>
+    <script type="text/javascript" src="../src/index.js"></script>
+    <script type="text/javascript" src="../src/AdminTerminal.js"></script>
 <!-- -------------------------------------------------------------------------------------------------- -->
   </body>
 </html>

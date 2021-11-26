@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './styles/App.css';import './styles/App.css';
+import './styles/App.css';
 import { API } from 'aws-amplify';
 import { listVisitors } from './graphql/queries';
 import { createVisitor as createVisitorMutation } from './graphql/mutations';

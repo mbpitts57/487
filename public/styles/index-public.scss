@@ -16,6 +16,10 @@ hr {
     width: 95%;
     }
 
+.index-page{
+        display: block;
+}
+
 .logo-img {
     max-height: 2.2em;
     max-width: 2.2em;
@@ -161,13 +165,28 @@ hr {
 
     // styles 'administrators' link
     a {
-        display: flex;
-        flex-direction: row;
+        
         text-decoration: none;
         padding: 0;
         margin-left: 0em !important; 
-        align-items: center;
+        
     }
+}
+
+.transparent-btn{
+    display: flex;
+    flex-direction: row;
+    font-size: 1em;
+    background: none;
+    font-family: 'Inconsolata', monospace;
+    color: white;
+    border: none;
+    padding: 0px;
+    align-items: center;
+}
+
+.transparent-btn:hover{
+    cursor: pointer;
 }
 
 // --- admin terminal styling --------------------------------------------------------
@@ -199,6 +218,10 @@ hr {
         align-items: center;
         flex-direction: row;
     }
+}
+
+.admin-terminal{
+    display: none;
 }
 
 .admin-terminal-container{
@@ -254,7 +277,7 @@ hr {
 }
 
 .main-user-results{
-    display: none;
+    display: flex;
 }
 
 .main-analytics{
