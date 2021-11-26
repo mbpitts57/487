@@ -8,6 +8,8 @@ import { API } from "aws-amplify";
 import { listVisitors } from "./graphql/queries";
 import { deleteVisitor as deleteVisitorMutation } from "./graphql/mutations";
 
+import * as queries from './graphql/queries';
+
 // ---------------------------------------------------------------------------------------------------------------
 
 export function ViewEntries() {
@@ -16,6 +18,11 @@ export function ViewEntries() {
   useEffect(() => {
     fetchVisitors();
   }, []);
+
+  async function listEntries() {
+    const allVisitors = await API.graphql({ query: queries.listVisitors });
+    console.log(allVisitors);
+  }
 
   async function fetchVisitors() {
     const apiData = await API.graphql({ query: listVisitors });
@@ -34,17 +41,22 @@ export function ViewEntries() {
   return (
     <div className="App">
       <h1>Review User Entries</h1>
-      <div style={{ marginBottom: 30 }}>
+      {/* shows a list of all user entries */}
+      <div>
         {Visitors.map((Visitor) => (
-          <div key={Visitor.id || Visitor.name}>
-            <h2>{Visitor.name}</h2>
-            <p>{Visitor.description}</p>
+          <div key={Visitor.id || Visitor.visName}>
+            <h2>{Visitor.visName}</h2>
+            <p>{Visitor.visEmail}</p>
             <button onClick={() => deleteVisitor(Visitor)}>
               Delete Visitor
+            </button>
+            <button onClick={listEntries}>
+              Console Log all Visitors
             </button>
           </div>
         ))}
       </div>
+
     </div>
   );
 }
@@ -99,5 +111,3 @@ export function AdvancedAdminView() {
 }
 
 reportWebVitals();
-
-// export default withAuthenticator(ViewEntries);

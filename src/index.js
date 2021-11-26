@@ -1,5 +1,6 @@
 import InsertVisitor from './App';
 import {UserResultsView, AnalyticsView, AccountMgmtView, AdvancedAdminView, ViewEntries} from './AdminTerminal';
+import AdminLogin from './AdminLogin';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -10,14 +11,18 @@ import Amplify from 'aws-amplify';
 import config from './aws-exports';
 Amplify.configure(config);
 
+// ReactDOM.render(
+//   // <React.StrictMode>
+//     <AdminLogin/>, document.getElementById('admin-terminal')
+// );
+
 ReactDOM.render(
-  // <React.StrictMode>
     <InsertVisitor/>, document.getElementById('visitor-info')
 );
 
 ReactDOM.render(
   <React.StrictMode> 
-    <UserResultsView/>, <ViewEntries/>
+    <AdminLogin/>, <UserResultsView/>, <ViewEntries/>,
   </React.StrictMode>, 
   document.getElementById('main-user-results')
 );
