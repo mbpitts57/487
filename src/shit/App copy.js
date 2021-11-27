@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import './styles/App.css';
+import '../styles/App.css';
 import { API } from 'aws-amplify';
-import { withAuthenticator, 
+import {
+  withAuthenticator,
   // AmplifySignOut 
 } from '@aws-amplify/ui-react';
-import { listVisitors } from './graphql/queries';
-import { createVisitor as createVisitorMutation, deleteVisitor as deleteVisitorMutation } from './graphql/mutations';
+import { listVisitors } from '../graphql/queries';
+import { createVisitor as createVisitorMutation, deleteVisitor as deleteVisitorMutation } from '../graphql/mutations';
 
 // adding auth
 // import Amplify, { Auth } from 'aws-amplify';
@@ -30,17 +31,17 @@ function App() {
   async function createVisitor() {
     if (!formData.visName || !formData.visEmail) return;
     await API.graphql({ query: createVisitorMutation, variables: { input: formData } });
-    setVisitors([ ...Visitors, formData ]);
+    setVisitors([...Visitors, formData]);
     setFormData(initialFormState);
   }
 
   async function deleteVisitor({ id }) {
     const newVisitorsArray = Visitors.filter(Visitor => Visitor.id !== id);
     setVisitors(newVisitorsArray);
-    await API.graphql({ query: deleteVisitorMutation, variables: { input: { id } }});
+    await API.graphql({ query: deleteVisitorMutation, variables: { input: { id } } });
   }
 
-  async function hideBaby(){
+  async function hideBaby() {
     const baby = document.getElementById("baby");
     baby.style.display = 'none';
   }
@@ -48,12 +49,12 @@ function App() {
   return (
     <div className="App">
       <input
-        onChange={e => setFormData({ ...formData, 'visName': e.target.value})}
+        onChange={e => setFormData({ ...formData, 'visName': e.target.value })}
         placeholder="Name:"
         value={formData.visName}
       />
       <input
-        onChange={e => setFormData({ ...formData, 'visEmail': e.target.value})}
+        onChange={e => setFormData({ ...formData, 'visEmail': e.target.value })}
         placeholder="Email:"
         value={formData.visEmail}
       />
@@ -62,7 +63,7 @@ function App() {
       <span id="baby"> BABY BABY BABY BABY BABY </span>
       <button onClick={hideBaby}>Hide Baby</button>
       {/* --------------------------------------------------------- */}
-      <div style={{marginBottom: 30}}>
+      <div style={{ marginBottom: 30 }}>
         {
           Visitors.map(Visitor => (
             <div key={Visitor.id || Visitor.visName}>

@@ -25,14 +25,14 @@ hr {
   max-height: 2.2em;
   max-width: 2.2em;
   background: rgb(155, 155, 155);
-  margin-left: 0.6em;
+  margin-left: .6em;
   border-style: outset;
   border-width: 2px;
   border-color: rgb(180, 180, 180);
 }
 
 .header-div {
-  font-family: "Play", sans-serif;
+  font-family: 'Play', sans-serif;
   display: flex;
   padding: 0px 20px;
   color: white;
@@ -52,6 +52,16 @@ hr {
 .span-landing {
   @include partial.container-background();
   @include partial.container-styling();
+  font-size: 1.8em;
+  box-sizing: border-box;
+  padding: 1em;
+
+  button {
+    height: 3.5em;
+    width: 9em;
+    font-size: .5em;
+    margin-top: 1em;
+  }
 }
 
 .personality-assessment {
@@ -71,7 +81,7 @@ hr {
 }
 
 .text-muted {
-  font-size: 0.9em;
+  font-size: .9em;
 }
 
 .p-text {
@@ -86,7 +96,7 @@ hr {
 }
 
 .radio-btn-flex {
-  margin-top: 0.6em;
+  margin-top: .6em;
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -98,7 +108,7 @@ hr {
 }
 
 .checkbox-btn-flex {
-  margin-top: 0.6em;
+  margin-top: .6em;
   display: flex;
   flex-direction: row;
   text-align: left;
@@ -122,8 +132,8 @@ hr {
   @include partial.container-background();
 
   div {
-    margin-top: 0.2em;
-    margin-bottom: 0.2em;
+    margin-top: .2em;
+    margin-bottom: .2em;
     flex-direction: column;
   }
 }
@@ -133,8 +143,8 @@ hr {
   @include partial.container-styling();
 
   div {
-    margin-top: 0.2em;
-    margin-bottom: 0.2em;
+    margin-top: .2em;
+    margin-bottom: .2em;
     flex-direction: column;
   }
 }
@@ -166,9 +176,11 @@ hr {
 
   // styles 'administrators' link
   a {
+
     text-decoration: none;
     padding: 0;
     margin-left: 0em !important;
+
   }
 }
 
@@ -177,7 +189,7 @@ hr {
   flex-direction: row;
   font-size: 1em;
   background: none;
-  font-family: "Inconsolata", monospace;
+  font-family: 'Inconsolata', monospace;
   color: white;
   border: none;
   padding: 0px;
@@ -219,17 +231,23 @@ hr {
   }
 }
 
+button {
+  font-family: 'Inconsolata', monospace;
+}
+
 .admin-terminal {
   display: none;
 }
 
 .admin-terminal-container {
-  @include partial.container-background();
   display: flex;
   width: 75%;
   margin: auto;
-  margin-top: 5em;
-  margin-bottom: 5em;
+  background: rgb(184, 184, 184);
+  box-shadow: 10px 10px 2px rgb(92, 103, 119);
+  border-style: outset;
+  border-width: 5px;
+  border-color: rgb(206, 206, 206);
   flex-direction: column;
   height: 40em;
 }
@@ -250,25 +268,25 @@ hr {
 .admin-terminal-sidebar {
   display: flex;
   flex-direction: column;
-  background: rgb(184, 184, 184);
   margin-left: 1%;
   margin-top: 1%;
+  background: none;
 
   button {
     height: 6em;
     width: 6em;
-    margin: 0.5em;
+    margin: .5em;
     background: rgb(206, 206, 206);
     border-style: outset;
     border-width: 2px;
     border-color: rgb(206, 206, 206);
-    font-family: "Inconsolata", monospace;
+    font-family: 'Inconsolata', monospace;
   }
 }
 
 .admin-terminal-main {
   margin-left: 1% !important;
-  margin: 0.5em;
+  margin: .5em;
   margin-right: 1%;
   margin-top: 1%;
 }

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+<!-- <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" /> -->
-    <!-- <link rel="manifest" href="%PUBLIC_URL%/manifest.json" /> -->
-    <!--
+<!-- <link rel="manifest" href="%PUBLIC_URL%/manifest.json" /> -->
+<!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -12,585 +12,603 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <!-- importing google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cantarell&family=Chakra+Petch:wght@300;400&family=Play&family=Rajdhani:wght@300;400&family=Saira+Condensed:wght@100;200&family=Source+Code+Pro:wght@200;300&display=swap" rel="stylesheet">
 
-    <!-- importing index.css -->
-    <link rel="stylesheet" href="./styles/index-public.css">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- importing favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="manifest" href="favicon/site.webmanifest">
+  <!-- importing google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cantarell&family=Chakra+Petch:wght@300;400&family=Play&family=Rajdhani:wght@300;400&family=Saira+Condensed:wght@100;200&family=Source+Code+Pro:wght@200;300&display=swap"
+    rel="stylesheet">
 
-    <!-- title of webpage in browser -->
-    <title>Evariste</title>
+  <!-- importing index.css -->
+  <link rel="stylesheet" href="../src/styles/index.css">
+
+  <!-- importing favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+
+  <!-- title of webpage in browser -->
+  <title>Evariste</title>
 </head>
 
 <body>
-<!--------------- index page --------------------------------------------------->
-    <div class="index-page" id="index-page">
+  <!--------------- index page --------------------------------------------------->
+  <div class="index-page" id="index-page">
     <!-- header container that holds evariste text and logo -->
     <!-- <div id="header-div" class="header-div"></div> -->
     <div class="header-div">
-      <header><div class="logo-evariste-row"><h1>Evariste</h1><img src="images/evarist-logo-3.png" class="logo-img" alt="Evariste Logo"/></div></header>
+      <header>
+        <div class="logo-evariste-row">
+          <h1>Evariste</h1><img src="images/evarist-logo-3.png" class="logo-img" alt="Evariste Logo" />
+        </div>
+      </header>
     </div>
 
-      <!-- beginning of main content -->
-      <main>
-        <!-- landing page paragraph, introduction to evariste with button to start assessment -->
-        <div class="span-landing" id="landing-text">
-          <span> 
-            Evariste is a screening tool for sdfsdfsd<br>
-            sdfsdfsdfsdf<br>
-            fsdfsdfsdf<br>
-          </span>
-          <button type="button" id="btn-click" onclick="toggle_visibility_5();"> Begin Assessment </button>
-        </div>
+    <!-- beginning of main content -->
+    <main>
+      <!-- landing page paragraph, introduction to evariste with button to start assessment -->
+      <div class="span-landing" id="landing-text">
+        <span>
+          Evariste is System 9's internal developer screening tool.<br>
+          Continue to the assessment, complete it, and we will be in touch.<br>
+        </span>
+        <div id="test"></div>
+        <button type="button" id="btn-click" onclick="toggle_visibility_5();"> Begin Assessment </button>
+      </div>
 
-        <form>
-            <!-- personality assessment portion of form. visible upon page opening -->
-            <span>
-            <div class="a1-form" id="form-part-1">
-                <div class="personality-assessment" id="per">
-                  <h1 class="p-assessment-h1">Section 1: Personality Assessment</h1>
-                    <p class="p-text text-muted">Please do not try to answer "correctly." Our qualifying metrics do not necessarily conincide with traits that are often viewed positively, as we are assessing workers atypically. Please answer honestly.
-                    </p>
-                    <hr>
-          
-                    <!-- personality assessment question 1 -->
-                    <label for="p-answer1" class="p-text">Do you have any hobbies/activities outside of work you dedicate a significant amount of time to? If Yes, please list them.</label>
-                    <textarea class="textarea-answer" type="text" placeholder="" name="p-answer1" id="p-answer1" required></textarea><br>
-          
-                    <!-- personality assessment question 2 -->
-                    <label for="p-answer2" class="p-text">If you answered yes to the previous question, do you consider yourself "great" at any of them? If yes, please detail why. If no, please write N/A.</label>
-                    <textarea class="textarea-answer" type="text" placeholder="" name="p-answer2" id="p-answer2" required></textarea><br>
-          
-                    <!-- personality assessment question 3 -->
-                    <label for="p-answer3" class="p-text">Tell us about a time you were singled out by a co-worker/team member or superior for the quality of your work, and what effect it had on you. If this has happened more than once, you can provide multiple examples.</label>
-                    <textarea class="textarea-answer" type="text" placeholder="" name="p-answer3" id="p-answer3" required></textarea><br>
-                    
-                    <!-- personality assessment question 4 -->
-                    <label for="p-answer4" class="p-text">Do you find yourself often speaking too quickly or too slowly?</label>
-                    <div class="radio-btn-flex">
-                        <div>
-                          <input type="radio" id="ts-o" name="p-answer4" value="ts-o">
-                          <label for="ts-o">Too slowly, often</label>
-                        </div>
-                        <div>
-                          <input type="radio" id="ts-r" name="p-answer4" value="ts-r">
-                          <label for="ts-r">Too slowly, rarely</label>
-                        </div>
-                        <div>
-                          <input type="radio" id="n" name="p-answer4" value="n">
-                          <label for="n">Neither</label>
-                        </div>
-                        <div>
-                          <input type="radio" id="tq-r" name="p-answer4" value="tq-r">
-                          <label for="tq-r"> Too quickly, rarely</label>
-                        </div>
-                        <div>
-                          <input type="radio" id="tq-o" name="p-answer4" value="tq-o">
-                          <label for="tq-o">Too quickly, often</label><br>
-                        </div>
-                    </div>
-          
-                    <!-- personality assessment question 5 -->
-                    <label for="p-answer5" class="p-text">How many hours do you sleep on average during weeknights?</label>
-                    <div class="radio-btn-flex">
-                        <div>
-                          <input type="radio" id="five-less" name="p-answer5" value="five-less">
-                          <label for="five-less">About 5 hours or less</label>
-                        </div>
-                        <div>
-                          <input type="radio" id="six" name="p-answer5" value="six">
-                          <label for="six">About 6 hours</label>
-                        </div>
-                        <div>
-                          <input type="radio" id="seven" name="p-answer5" value="seven">
-                          <label for="seven">About 7 hours</label>
-                        </div>
-                        <div>
-                           <input type="radio" id="eight" name="p-answer5" value="eight">
-                           <label for="eight">About 8 hours</label>
-                        </div>
-                        <div>
-                          <input type="radio" id="nine" name="p-answer5" value="nine">
-                          <label for="nine">About 9 hours or more</label><br>
-                       </div>
-                    </div>
-          
-                    <!-- personality assessment question 6 -->
-                    <label for="p-answer6" class="p-text">Do you have any "vices?" If so, please elaborate.</label>
-                    <textarea class="textarea-answer" type="text" placeholder="" name="p-answer6" id="p-answer6" required></textarea>
-          
-                    <button type="button" class="continue-btn" onclick="toggle_visibility();">Continue</button>
+      <form>
+        <!-- personality assessment portion of form. visible upon page opening -->
+        <span>
+          <div class="a1-form" id="form-part-1">
+            <div class="personality-assessment" id="per">
+              <h1 class="p-assessment-h1">Section 1: Personality Assessment</h1>
+              <p class="p-text text-muted">Please do not try to answer "correctly." Our qualifying metrics do not
+                necessarily conincide with traits that are often viewed positively, as we are assessing workers
+                atypically. Please answer honestly.
+              </p>
+              <hr>
+
+              <!-- personality assessment question 1 -->
+              <label for="p-answer1" class="p-text">Do you have any hobbies/activities outside of work you dedicate a
+                significant amount of time to? If Yes, please list them.</label>
+              <textarea class="textarea-answer" type="text" placeholder="" name="p-answer1" id="p-answer1"
+                required></textarea><br>
+
+              <!-- personality assessment question 2 -->
+              <label for="p-answer2" class="p-text">If you answered yes to the previous question, do you consider
+                yourself "great" at any of them? If yes, please detail why. If no, please write N/A.</label>
+              <textarea class="textarea-answer" type="text" placeholder="" name="p-answer2" id="p-answer2"
+                required></textarea><br>
+
+              <!-- personality assessment question 3 -->
+              <label for="p-answer3" class="p-text">Tell us about a time you were singled out by a co-worker/team member
+                or superior for the quality of your work, and what effect it had on you. If this has happened more than
+                once, you can provide multiple examples.</label>
+              <textarea class="textarea-answer" type="text" placeholder="" name="p-answer3" id="p-answer3"
+                required></textarea><br>
+
+              <!-- personality assessment question 4 -->
+              <label for="p-answer4" class="p-text">Do you find yourself often speaking too quickly or too
+                slowly?</label>
+              <div class="radio-btn-flex">
+                <div>
+                    <input type="radio" id="ts-o" name="p-answer4" value="ts-o">
+                    <label for="ts-o">Too slowly, often</label>
                 </div>
+                <div>
+                    <input type="radio" id="ts-r" name="p-answer4" value="ts-r">
+                    <label for="ts-r">Too slowly, rarely</label>
+                </div>
+                <div>
+                    <input type="radio" id="n" name="p-answer4" value="n">
+                    <label for="n">Neither</label>
+                </div>
+                <div>
+                   <input type="radio" id="tq-r" name="p-answer4" value="tq-r">
+                  <label for="tq-r"> Too quickly, rarely</label>
+                </div>
+                <div>
+                    <input type="radio" id="tq-o" name="p-answer4" value="tq-o">
+                    <label for="tq-o">Too quickly, often</label><br>
+                </div>
+              </div>
+
+              <!-- personality assessment question 5 -->
+              <label for="p-answer5" class="p-text">How many hours do you sleep on average during weeknights?</label>
+              <div class="radio-btn-flex">
+                <div>
+                    <input type="radio" id="five-less" name="p-answer5" value="five-less">
+                    <label for="five-less">About 5 hours or less</label>
+                </div>
+                <div>
+                    <input type="radio" id="six" name="p-answer5" value="six">
+                    <label for="six">About 6 hours</label>
+                </div>
+                <div>
+                    <input type="radio" id="seven" name="p-answer5" value="seven">
+                    <label for="seven">About 7 hours</label>
+                </div>
+                <div>
+                   <input type="radio" id="eight" name="p-answer5" value="eight">
+                  <label for="eight">About 8 hours</label>
+                </div>
+                <div>
+                    <input type="radio" id="nine" name="p-answer5" value="nine">
+                    <label for="nine">About 9 hours or more</label><br>
+                </div>
+              </div>
+
+              <!-- personality assessment question 6 -->
+              <label for="p-answer6" class="p-text">Do you have any "vices?" If so, please elaborate.</label>
+              <textarea class="textarea-answer" type="text" placeholder="" name="p-answer6" id="p-answer6"
+                required></textarea>
+
+              <button type="button" class="continue-btn" onclick="toggle_visibility();">Continue</button>
             </div>
-            </span>
-          
-            <!-- cognitive assessment portion of form. not visible upon page opening. becomes visible when user clicks 'continue' button on personality assessment. ------------------------------------------------->
-            <span>
-            <div class="a2-form" id="form-part-2">
-                <div class="cognitive-assessment" id="cog">
-                  <h1>Section 2: Cognitive Assessment</h1>
-                  <p class="p-text text-muted">Check the two words that can mean the same thing.</p>
-                  <hr>
-          
-                  <!-- cognitive assessment question 1 ------------------------------------>
-                  <label for="c-answer1" class="p-text">1.</label>
-                        <div class="checkbox-btn-flex">
-                            <div>
-                              <input type="checkbox" id="tiny" name="c-answer1" value="tiny">
-                              <label for="tiny">tiny</label>
-                            </div>
-                            <div>
-                              <input type="checkbox" id="faded" name="c-answer1" value="faded">
-                              <label for="faded">faded</label>
-                            </div>
-                            <div>
-                              <input type="checkbox" id="new" name="c-answer1" value="new">
-                              <label for="new">new</label>
-                            </div>
-                            <div>
-                              <input type="checkbox" id="large" name="c-answer1" value="large">
-                              <label for="large">large</label>
-                            </div>
-                            <div>
-                              <input type="checkbox" id="big" name="c-answer1" value="big">
-                              <label for="big">big</label><br>
-                            </div>
-                        </div>
-          
-                  <!-- cognitive assessment question 2 ---------------------------------->
-                  <label for="c-answer2">2.</label>
-                        <div class="checkbox-btn-flex">
-                        <div>
-                          <input type="checkbox" id="shovel" name="c-answer2" value="shovel">
-                          <label for="shovel">shovel</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="spade" name="c-answer2" value="spade">
-                          <label for="spade">spade</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="needle" name="c-answer2"   value="needle">
-                          <label for="needle">needle</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="oak" name="c-answer2" value="oak">
-                          <label for="oak">oak</label>
-                        </div>
-                      
-                        <div>
-                          <input type="checkbox" id="club" name="c-answer2" value="club">
-                          <label for="club">club</label><br>
-                        </div>
-                        </div>
-          
-                   <!-- cognitive assessment question 3 ---------------------------------->
-                  <label for="c-answer3">3.</label>
-                        <div class="checkbox-btn-flex">
-                        <div>
-                          <input type="checkbox" id="walk" name="c-answer3" value="walk">
-                          <label for="walk">walk</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="rob" name="c-answer3" value="rob">
-                          <label for="rob">rob</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="juggle" name="c-answer3"   value="juggle">
-                          <label for="juggle">juggle</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="steal" name="c-answer3" value="steal">
-                          <label for="steal">steal</label>
-                        </div>
-                      
-                        <div>
-                          <input type="checkbox" id="discover" name="c-answer3" value="discover">
-                          <label for="discover">discover</label><br>
-                        </div>
-                        </div>
-          
-                  <!-- cognitive assessment question 4 ---------------------------------->
-                  <label for="c-answer4">4.</label>
-                        <div class="checkbox-btn-flex">
-                        <div>
-                          <input type="checkbox" id="finish" name="c-answer4" value="finish">
-                          <label for="finish">finish</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="embellish" name="c-answer4" value="embellish">
-                          <label for="embellish">embellish</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="cap" name="c-answer4"   value="cap">
-                          <label for="cap">cap</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="squeak" name="c-answer4" value="squeak">
-                          <label for="squeak">squeak</label>
-                        </div>
-                      
-                        <div>
-                          <input type="checkbox" id="talk" name="c-answer4" value="talk">
-                          <label for="talk">talk</label><br>
-                        </div>
-                        </div>
-          
-                  <!-- cognitive assessment question 5 ---------------------------------->
-                  <label for="c-answer5">5.</label>
-                        <div class="checkbox-btn-flex">
-                        <div>
-                          <input type="checkbox" id="recall" name="c-answer5" value="recall">
-                          <label for="recall">recall</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="flex" name="c-answer5" value="flex">
-                          <label for="flex">flex</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="efface" name="c-answer5"   value="efface">
-                          <label for="efface">efface</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="remember" name="c-answer5" value="remember">
-                          <label for="remember">remember</label>
-                        </div>
-                      
-                        <div>
-                          <input type="checkbox" id="divest" name="c-answer5" value="divest">
-                          <label for="divest">divest</label><br>
-                        </div>
-                        </div>
-          
-                  <!-- cognitive assessment question 6 ---------------------------------->
-                  <label for="c-answer6">6.</label>
-                        <div class="checkbox-btn-flex">
-                        <div>
-                          <input type="checkbox" id="implore" name="c-answer6" value="implore">
-                          <label for="implore">implore</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="fancy" name="c-answer6" value="fancy">
-                          <label for="fancy">fancy</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="recant" name="c-answer6"   value="recant">
-                          <label for="recant">recant</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="beg" name="c-answer6" value="beg">
-                          <label for="beg">beg</label>
-                        </div>
-                      
-                        <div>
-                          <input type="checkbox" id="answer" name="c-answer6" value="answer">
-                          <label for="answer">answer</label><br>
-                        </div>
-                        </div>
-          
-                  <!-- cognitive assessment question 7 ---------------------------------->
-                  <label for="c-answer7">7.</label>
-                        <div class="checkbox-btn-flex">
-                        <div>
-                          <input type="checkbox" id="deal" name="c-answer7" value="deal">
-                          <label for="deal">deal</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="claim" name="c-answer7" value="claim">
-                          <label for="claim">claim</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="plea" name="c-answer7"   value="plea">
-                          <label for="plea">plea</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="recoup" name="c-answer7" value="recoup">
-                          <label for="recoup">recoup</label>
-                        </div>
-                      
-                        <div>
-                          <input type="checkbox" id="sale" name="c-answer7" value="sale">
-                          <label for="sale">sale</label><br>
-                        </div>
-                        </div>
-          
-                  <!-- cognitive assessment question 8 ---------------------------------->
-                  <label for="c-answer8">8.</label>
-                        <div class="checkbox-btn-flex">
-                        <div>
-                          <input type="checkbox" id="mindful" name="c-answer8" value="mindful">
-                          <label for="mindful">mindful</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="negligent" name="c-answer8" value="negligent">
-                          <label for="negligent">negligent</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="neurotic" name="c-answer8"   value="neurotic">
-                          <label for="neurotic">neurotic</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="lax" name="c-answer8" value="lax">
-                          <label for="lax">lax</label>
-                        </div>
-                      
-                        <div>
-                          <input type="checkbox" id="delectable" name="c-answer8" value="delectable">
-                          <label for="delectable">delectable</label><br>
-                        </div>
-                        </div>
-          
-                  <!-- cognitive assessment question 9 ---------------------------------->
-                  <label for="c-answer9">9.</label>
-                        <div class="checkbox-btn-flex">
-                        <div>
-                          <input type="checkbox" id="quash" name="c-answer9" value="quash">
-                          <label for="quash">quash</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="evade" name="c-answer9" value="evade">
-                          <label for="evade">evade</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="enumerate" name="c-answer9"   value="enumerate">
-                          <label for="enumerate">enumerate</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="assist" name="c-answer9" value="assist">
-                          <label for="assist">assist</label>
-                        </div>
-                      
-                        <div>
-                          <input type="checkbox" id="defeat" name="c-answer9" value="defeat">
-                          <label for="defeat">defeat</label><br>
-                        </div>
-                        </div>
-          
-                  <!-- cognitive assessment question 10 ---------------------------------->
-                  <label for="c-answer10">10.</label>
-                        <div class="checkbox-btn-flex">
-                        <div>
-                          <input type="checkbox" id="entrapment" name="c-answer10" value="entrapment">
-                          <label for="entrapment">entrapment</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="partner" name="c-answer10" value="partner">
-                          <label for="partner">partner</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="fool" name="c-answer10"   value="fool">
-                          <label for="fool">fool</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="companion" name="c-answer10" value="companion">
-                          <label for="companion">companion</label>
-                        </div>
-                      
-                        <div>
-                          <input type="checkbox" id="mirror" name="c-answer10" value="mirror">
-                          <label for="mirror">mirror</label><br>
-                        </div>
-                        </div>
-          
-                  <!-- cognitive assessment question 11 ---------------------------------->
-                  <label for="c-answer11">11.</label>
-                        <div class="checkbox-btn-flex">
-                        <div>
-                          <input type="checkbox" id="junk" name="c-answer11" value="junk">
-                          <label for="junk">junk</label>
-          
-                        </div>  
-                        <div>
-                          <input type="checkbox" id="squeeze" name="c-answer11" value="squeeze">
-                          <label for="squeeze">squeeze</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="trash" name="c-answer11"   value="trash">
-                          <label for="trash">trash</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="punch" name="c-answer11" value="punch">
-                          <label for="punch">punch</label>
-                        </div>
-                      
-                        <div>
-                          <input type="checkbox" id="crack" name="c-answer11" value="crack">
-                          <label for="crack">crack</label><br>
-                        </div>
-                        </div>
-          
-                  <!-- cognitive assessment question 12 ---------------------------------->
-                  <label for="c-answer12">12.</label>
-                        <div class="checkbox-btn-flex">
-                        <div>
-                          <input type="checkbox" id="trivial" name="c-answer12" value="trivial">
-                          <label for="trivial">trivial</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="crude" name="c-answer12" value="crude">
-                          <label for="crude">crude</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="presidential" name="c-answer12"   value="presidential">
-                          <label for="presidential">presidential</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="flow" name="c-answer12" value="flow">
-                          <label for="flow">flow</label>
-                        </div>
-                      
-                        <div>
-                          <input type="checkbox" id="minor" name="c-answer12" value="minor">
-                          <label for="minor">minor</label><br>
-                        </div>
-                        </div>
-          
-                  <!-- cognitive assessment question 13 ---------------------------------->
-                  <label for="c-answer13">13.</label>
-                        <div class="checkbox-btn-flex">
-                        <div>
-                          <input type="checkbox" id="cistern" name="c-answer13" value="cistern">
-                          <label for="cistern">cistern</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="crimp" name="c-answer13" value="crimp">
-                          <label for="crimp">crimp</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="bastion" name="c-answer13"   value="bastion">
-                          <label for="bastion">bastion</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="leeway" name="c-answer13" value="leeway">
-                          <label for="leeway">leeway</label>
-                        </div>
-                      
-                        <div>
-                          <input type="checkbox" id="pleat" name="c-answer13" value="pleat">
-                          <label for="pleat">pleat</label><br>
-                        </div>
-                        </div>
-                  <!-- cognitive assessment question 14 ---------------------------------->
-                  <label for="c-answer14">14.</label>
-                        <div class="checkbox-btn-flex">
-                        <div>
-                          <input type="checkbox" id="solder" name="c-answer14" value="solder">
-                          <label for="solder">solder</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="beguile" name="c-answer14" value="beguile">
-                          <label for="beguile">beguile</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="distant" name="c-answer14"   value="distant">
-                          <label for="distant">distant</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="reveal" name="c-answer14" value="reveal">
-                          <label for="reveal">reveal</label>
-                        </div>
-                      
-                        <div>
-                          <input type="checkbox" id="seduce" name="c-answer14" value="seduce">
-                          <label for="seduce">seduce</label><br>
-                        </div>
-                        </div>
-          
-                  <!-- cognitive assessment question 15 ---------------------------------->
-                  <label for="c-answer15">15.</label>
-                        <div class="checkbox-btn-flex">
-                        <div>
-                          <input type="checkbox" id="capricious" name="c-answer15" value="capricious">
-                          <label for="capricious">capricious</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="incipient" name="c-answer15" value="incipient">
-                          <label for="incipient">incipient</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="galling" name="c-answer15"   value="galling">
-                          <label for="galling">galling</label>
-                        </div>
-          
-                        <div>
-                          <input type="checkbox" id="nascent" name="c-answer15" value="nascent">
-                          <label for="nascent">nascent</label>
-                        </div>
-                      
-                        <div>
-                          <input type="checkbox" id="chromatic" name="c-answer15" value="chromatic">
-                          <label for="chromatic">chromatic</label><br>
-                        </div>
-                        </div>
-          
-                  <!-- cognitive assesment 'go back' and 'continue' buttons. 'go back' hides cognitive assesment and shows personality assessment.
+          </div>
+        </span>
+
+        <!-- cognitive assessment portion of form. not visible upon page opening. becomes visible when user clicks 'continue' button on personality assessment. ------------------------------------------------->
+        <span>
+          <div class="a2-form" id="form-part-2">
+            <div class="cognitive-assessment" id="cog">
+              <h1>Section 2: Cognitive Assessment</h1>
+              <p class="p-text text-muted">Check the two words that can mean the same thing.</p>
+              <hr>
+
+              <!-- cognitive assessment question 1 ------------------------------------>
+              <label for="c-answer1" class="p-text">1.</label>
+              <div class="checkbox-btn-flex">
+                <div>
+                    <input type="checkbox" id="tiny" name="c-answer1" value="tiny">
+                    <label for="tiny">tiny</label>
+                </div>
+                  <div>
+                    <input type="checkbox" id="faded" name="c-answer1" value="faded">
+                    <label for="faded">faded</label>
+                    </div>
+                  <div>
+                    <input type="checkbox" id="new" name="c-answer1" value="new">
+                    <label for="new">new</label>
+                    </div>
+                <div>
+                  <input type="checkbox" id="large" name="c-answer1" value="large">
+                    <label for="large">large</label>
+                </div>
+                  <div>
+                    <input type="checkbox" id="big" name="c-answer1" value="big">
+                    <label for="big">big</label><br>
+                    </div>
+              </div>
+
+              <!-- cognitive assessment question 2 ---------------------------------->
+              <label for="c-answer2">2.</label>
+              <div class="checkbox-btn-flex">
+                  <div>
+                    <input type="checkbox" id="shovel" name="c-answer2" value="shovel">
+                    <label for="shovel">shovel</label>
+                    </div>
+
+                  <div>
+                    <input type="checkbox" id="spade" name="c-answer2" value="spade">
+                    <label for="spade">spade</label>
+                    </div>
+
+                  <div>
+                    <input type="checkbox" id="needle" name="c-answer2" value="needle">
+                    <label for="needle">needle</label>
+                    </div>
+
+                <div>
+                  <input type="checkbox" id="oak" name="c-answer2" value="oak">
+                    <label for="oak">oak</label>
+                </div>
+
+                  <div>
+                    <input type="checkbox" id="club" name="c-answer2" value="club">
+                    <label for="club">club</label><br>
+                    </div>
+              </div>
+
+              <!-- cognitive assessment question 3 ---------------------------------->
+              <label for="c-answer3">3.</label>
+              <div class="checkbox-btn-flex">
+                  <div>
+                    <input type="checkbox" id="walk" name="c-answer3" value="walk">
+                    <label for="walk">walk</label>
+                    </div>
+
+                  <div>
+                    <input type="checkbox" id="rob" name="c-answer3" value="rob">
+                    <label for="rob">rob</label>
+                    </div>
+
+                  <div>
+                    <input type="checkbox" id="juggle" name="c-answer3" value="juggle">
+                    <label for="juggle">juggle</label>
+                    </div>
+
+                <div>
+                  <input type="checkbox" id="steal" name="c-answer3" value="steal">
+                    <label for="steal">steal</label>
+                </div>
+
+                  <div>
+                    <input type="checkbox" id="discover" name="c-answer3" value="discover">
+                    <label for="discover">discover</label><br>
+                    </div>
+              </div>
+
+              <!-- cognitive assessment question 4 ---------------------------------->
+              <label for="c-answer4">4.</label>
+              <div class="checkbox-btn-flex">
+                  <div>
+                    <input type="checkbox" id="finish" name="c-answer4" value="finish">
+                    <label for="finish">finish</label>
+                    </div>
+
+                  <div>
+                    <input type="checkbox" id="embellish" name="c-answer4" value="embellish">
+                    <label for="embellish">embellish</label>
+                    </div>
+
+                  <div>
+                    <input type="checkbox" id="cap" name="c-answer4" value="cap">
+                    <label for="cap">cap</label>
+                    </div>
+
+                <div>
+                  <input type="checkbox" id="squeak" name="c-answer4" value="squeak">
+                    <label for="squeak">squeak</label>
+                </div>
+
+                  <div>
+                    <input type="checkbox" id="talk" name="c-answer4" value="talk">
+                    <label for="talk">talk</label><br>
+                    </div>
+              </div>
+
+              <!-- cognitive assessment question 5 ---------------------------------->
+              <label for="c-answer5">5.</label>
+              <div class="checkbox-btn-flex">
+                  <div>
+                    <input type="checkbox" id="recall" name="c-answer5" value="recall">
+                    <label for="recall">recall</label>
+                    </div>
+
+                  <div>
+                    <input type="checkbox" id="flex" name="c-answer5" value="flex">
+                    <label for="flex">flex</label>
+                    </div>
+
+                  <div>
+                    <input type="checkbox" id="efface" name="c-answer5" value="efface">
+                    <label for="efface">efface</label>
+                    </div>
+
+                <div>
+                  <input type="checkbox" id="remember" name="c-answer5" value="remember">
+                    <label for="remember">remember</label>
+                </div>
+
+                  <div>
+                    <input type="checkbox" id="divest" name="c-answer5" value="divest">
+                    <label for="divest">divest</label><br>
+                    </div>
+              </div>
+
+              <!-- cognitive assessment question 6 ---------------------------------->
+              <label for="c-answer6">6.</label>
+              <div class="checkbox-btn-flex">
+                  <div>
+                    <input type="checkbox" id="implore" name="c-answer6" value="implore">
+                    <label for="implore">implore</label>
+                    </div>
+
+                  <div>
+                    <input type="checkbox" id="fancy" name="c-answer6" value="fancy">
+                    <label for="fancy">fancy</label>
+                    </div>
+
+                  <div>
+                    <input type="checkbox" id="recant" name="c-answer6" value="recant">
+                    <label for="recant">recant</label>
+                    </div>
+
+                <div>
+                  <input type="checkbox" id="beg" name="c-answer6" value="beg">
+                    <label for="beg">beg</label>
+                </div>
+
+                  <div>
+                    <input type="checkbox" id="answer" name="c-answer6" value="answer">
+                    <label for="answer">answer</label><br>
+                    </div>
+              </div>
+
+              <!-- cognitive assessment question 7 ---------------------------------->
+              <label for="c-answer7">7.</label>
+              <div class="checkbox-btn-flex">
+                  <div>
+                    <input type="checkbox" id="deal" name="c-answer7" value="deal">
+                    <label for="deal">deal</label>
+                    </div>
+
+                  <div>
+                    <input type="checkbox" id="claim" name="c-answer7" value="claim">
+                    <label for="claim">claim</label>
+                    </div>
+
+                  <div>
+                    <input type="checkbox" id="plea" name="c-answer7" value="plea">
+                    <label for="plea">plea</label>
+                    </div>
+
+                <div>
+                  <input type="checkbox" id="recoup" name="c-answer7" value="recoup">
+                    <label for="recoup">recoup</label>
+                </div>
+
+                  <div>
+                    <input type="checkbox" id="sale" name="c-answer7" value="sale">
+                    <label for="sale">sale</label><br>
+                    </div>
+              </div>
+
+              <!-- cognitive assessment question 8 ---------------------------------->
+              <label for="c-answer8">8.</label>
+              <div class="checkbox-btn-flex">
+                  <div>
+                    <input type="checkbox" id="mindful" name="c-answer8" value="mindful">
+                    <label for="mindful">mindful</label>
+                    </div>
+
+                  <div>
+                    <input type="checkbox" id="negligent" name="c-answer8" value="negligent">
+                    <label for="negligent">negligent</label>
+                    </div>
+
+                  <div>
+                    <input type="checkbox" id="neurotic" name="c-answer8" value="neurotic">
+                    <label for="neurotic">neurotic</label>
+                    </div>
+
+                <div>
+                  <input type="checkbox" id="lax" name="c-answer8" value="lax">
+                    <label for="lax">lax</label>
+                </div>
+
+                  <div>
+                    <input type="checkbox" id="delectable" name="c-answer8" value="delectable">
+                    <label for="delectable">delectable</label><br>
+                    </div>
+              </div>
+
+              <!-- cognitive assessment question 9 ---------------------------------->
+              <label for="c-answer9">9.</label>
+              <div class="checkbox-btn-flex">
+                  <div>
+                    <input type="checkbox" id="quash" name="c-answer9" value="quash">
+                    <label for="quash">quash</label>
+                    </div>
+
+                  <div>
+                    <input type="checkbox" id="evade" name="c-answer9" value="evade">
+                    <label for="evade">evade</label>
+                    </div>
+
+                  <div>
+                    <input type="checkbox" id="enumerate" name="c-answer9" value="enumerate">
+                    <label for="enumerate">enumerate</label>
+                    </div>
+
+                <div>
+                  <input type="checkbox" id="assist" name="c-answer9" value="assist">
+                    <label for="assist">assist</label>
+                </div>
+
+                  <div>
+                    <input type="checkbox" id="defeat" name="c-answer9" value="defeat">
+                    <label for="defeat">defeat</label><br>
+                    </div>
+              </div>
+
+              <!-- cognitive assessment question 10 ---------------------------------->
+              <label for="c-answer10">10.</label>
+              <div class="checkbox-btn-flex">
+                  <div>
+                    <input type="checkbox" id="entrapment" name="c-answer10" value="entrapment">
+                    <label for="entrapment">entrapment</label>
+                    </div>
+
+                  <div>
+                    <input type="checkbox" id="partner" name="c-answer10" value="partner">
+                    <label for="partner">partner</label>
+                    </div>
+
+                  <div>
+                    <input type="checkbox" id="fool" name="c-answer10" value="fool">
+                    <label for="fool">fool</label>
+                    </div>
+
+                <div>
+                  <input type="checkbox" id="companion" name="c-answer10" value="companion">
+                    <label for="companion">companion</label>
+                </div>
+
+                  <div>
+                    <input type="checkbox" id="mirror" name="c-answer10" value="mirror">
+                    <label for="mirror">mirror</label><br>
+                    </div>
+              </div>
+
+              <!-- cognitive assessment question 11 ---------------------------------->
+              <label for="c-answer11">11.</label>
+              <div class="checkbox-btn-flex">
+                  <div>
+                    <input type="checkbox" id="junk" name="c-answer11" value="junk">
+                    <label for="junk">junk</label>
+
+                    </div>
+                  <div>
+                    <input type="checkbox" id="squeeze" name="c-answer11" value="squeeze">
+                    <label for="squeeze">squeeze</label>
+                    </div>
+
+                  <div>
+                    <input type="checkbox" id="trash" name="c-answer11" value="trash">
+                    <label for="trash">trash</label>
+                    </div>
+
+                <div>
+                  <input type="checkbox" id="punch" name="c-answer11" value="punch">
+                    <label for="punch">punch</label>
+                </div>
+
+                  <div>
+                    <input type="checkbox" id="crack" name="c-answer11" value="crack">
+                    <label for="crack">crack</label><br>
+                    </div>
+              </div>
+
+              <!-- cognitive assessment question 12 ---------------------------------->
+              <label for="c-answer12">12.</label>
+              <div class="checkbox-btn-flex">
+                  <div>
+                    <input type="checkbox" id="trivial" name="c-answer12" value="trivial">
+                    <label for="trivial">trivial</label>
+                    </div>
+
+                  <div>
+                    <input type="checkbox" id="crude" name="c-answer12" value="crude">
+                    <label for="crude">crude</label>
+                    </div>
+
+                  <div>
+                    <input type="checkbox" id="presidential" name="c-answer12" value="presidential">
+                    <label for="presidential">presidential</label>
+                    </div>
+
+                <div>
+                  <input type="checkbox" id="flow" name="c-answer12" value="flow">
+                    <label for="flow">flow</label>
+                </div>
+
+                  <div>
+                    <input type="checkbox" id="minor" name="c-answer12" value="minor">
+                    <label for="minor">minor</label><br>
+                    </div>
+              </div>
+
+              <!-- cognitive assessment question 13 ---------------------------------->
+              <label for="c-answer13">13.</label>
+              <div class="checkbox-btn-flex">
+                  <div>
+                    <input type="checkbox" id="cistern" name="c-answer13" value="cistern">
+                    <label for="cistern">cistern</label>
+                    </div>
+
+                  <div>
+                    <input type="checkbox" id="crimp" name="c-answer13" value="crimp">
+                    <label for="crimp">crimp</label>
+                    </div>
+
+                  <div>
+                    <input type="checkbox" id="bastion" name="c-answer13" value="bastion">
+                    <label for="bastion">bastion</label>
+                    </div>
+
+                <div>
+                  <input type="checkbox" id="leeway" name="c-answer13" value="leeway">
+                    <label for="leeway">leeway</label>
+                </div>
+
+                  <div>
+                    <input type="checkbox" id="pleat" name="c-answer13" value="pleat">
+                    <label for="pleat">pleat</label><br>
+                    </div>
+              </div>
+              <!-- cognitive assessment question 14 ---------------------------------->
+              <label for="c-answer14">14.</label>
+              <div class="checkbox-btn-flex">
+                  <div>
+                    <input type="checkbox" id="solder" name="c-answer14" value="solder">
+                    <label for="solder">solder</label>
+                    </div>
+
+                  <div>
+                    <input type="checkbox" id="beguile" name="c-answer14" value="beguile">
+                    <label for="beguile">beguile</label>
+                    </div>
+
+                  <div>
+                    <input type="checkbox" id="distant" name="c-answer14" value="distant">
+                    <label for="distant">distant</label>
+                    </div>
+
+                <div>
+                  <input type="checkbox" id="reveal" name="c-answer14" value="reveal">
+                    <label for="reveal">reveal</label>
+                </div>
+
+                  <div>
+                    <input type="checkbox" id="seduce" name="c-answer14" value="seduce">
+                    <label for="seduce">seduce</label><br>
+                    </div>
+              </div>
+
+              <!-- cognitive assessment question 15 ---------------------------------->
+              <label for="c-answer15">15.</label>
+              <div class="checkbox-btn-flex">
+                  <div>
+                    <input type="checkbox" id="capricious" name="c-answer15" value="capricious">
+                    <label for="capricious">capricious</label>
+                    </div>
+
+                  <div>
+                    <input type="checkbox" id="incipient" name="c-answer15" value="incipient">
+                    <label for="incipient">incipient</label>
+                    </div>
+
+                  <div>
+                    <input type="checkbox" id="galling" name="c-answer15" value="galling">
+                    <label for="galling">galling</label>
+                    </div>
+
+                <div>
+                  <input type="checkbox" id="nascent" name="c-answer15" value="nascent">
+                    <label for="nascent">nascent</label>
+                </div>
+
+                  <div>
+                    <input type="checkbox" id="chromatic" name="c-answer15" value="chromatic">
+                    <label for="chromatic">chromatic</label><br>
+                    </div>
+              </div>
+
+              <!-- cognitive assesment 'go back' and 'continue' buttons. 'go back' hides cognitive assesment and shows personality assessment.
                   'continue' hides all assesments and shows input fields for the user's full name and email, along with another 'go back' button and a submit button. -->
-                  <div class="btn-container">
-                        <button type="button" id="r-btn" class="back-btn" onclick="toggle_visibility_2();">Go Back</button>
-                        <button type="button" class="continue-btn" onclick="toggle_visibility_3();">Continue</button>
-                  </div>
-                </div>
+              <div class="btn-container">
+                <button type="button" id="r-btn" class="back-btn" onclick="toggle_visibility_2();">Go Back</button>
+                <button type="button" class="continue-btn" onclick="toggle_visibility_3();">Continue</button>
+              </div>
             </div>
-            </span>
-          
-            <!-- submit/user info input portion of form, visible after clicking 'continue' button on cognitive assessment -->
-            <span>
-            <div class="s1-form" id="form-part-3">
-                        <div class="user-input-field" id="visitor-info">
-                          <!-- <div>
+          </div>
+        </span>
+
+        <!-- submit/user info input portion of form, visible after clicking 'continue' button on cognitive assessment -->
+        <span>
+          <div class="s1-form" id="form-part-3">
+            <div id="visitor-info">
+              <!-- <div>
                             <label for="visitorName" class="p-text">Please Enter Your Full Name:</label>
                             <textarea type="text" id="visitorName" value="visitorName" placeholder="" name="visitorName" id="visitorName" required></textarea>
                           </div>
@@ -599,59 +617,79 @@
                             <label for="visitorName" class="p-text">Also Kindly Enter Your Email:</label>
                             <textarea type="email" id="visitorEmail" value="visitorEmail" placeholder="" name="visitorEmail" id="visitorEmail" required></textarea>
                           </div> -->
-                        </div>
-
-                        <div class="user-input-field-2" id="visitor-info-2">
-                          <span> put a captcha here </span>
-                          <div class="btn-container">
-                            <button type="button" id="r-btn2" class="back-btn" onclick="toggle_visibility_4();">Go Back</button>
-                            <!-- <button type="submit" class="continue-btn" name="submit" onclick="submit_assessment()">Submit Assessment</button> -->
-                          </div>
-                        </div>
-                        
             </div>
-            </span>
-        </form>
-      </main>
-          
-            <!-- footer  -------------------------------------------->
-            <footer class="footer-bar">
-               <div class="footer-text-flex">
-                  <div>
-                    <p class="footer-text"><strong>Email/</strong></p>
-                    <p class="footer-text">joshua@evariste.io</p>
-                  </div>
-                  <span>
-                    <button type="button" class="transparent-btn" onclick="show_admin_terminal();" class="footer-text">Administrators</p>
-                  </span>
-                </div>
-            </footer>
-    </div>
 
-<!--------------- admin terminal ----------------------------------------------->
-    <div class="admin-terminal" id="admin-terminal">
-      <div class="admin-terminal-container">
-          <span class="admin-terminal-title"><Strong>Administrative Portal</Strong></span>
-          <div class="admin-terminal-content">
-              <nav class="admin-terminal-sidebar">
-                  <button type="button" onclick="show_user_results();"> user results </button>
-                  <button type="button" onclick="show_analytics();"> analytics </button>
-                  <button type="button" onclick="show_acct_mgmt();"> account management </button>
-                  <button type="button" onclick="show_advanced();"> advanced </button>
-              </nav>
-              <div class="admin-terminal-main">
-                  <div class="main-user-results" id="main-user-results"></div>
-                  <div class="main-analytics" id="main-analytics"></div>
-                  <div class="main-acct-mgmt" id="main-acct-mgmt"></div>
-                  <div class="main-advanced" id="main-advanced"></div>
+            <div class="user-input-field-2" id="visitor-info-2">
+              <span> put a captcha here </span>
+              <div class="btn-container">
+                <button type="button" id="r-btn2" class="back-btn" onclick="toggle_visibility_4();">Go Back</button>
+                <!-- <button type="submit" class="continue-btn" name="submit" onclick="submit_assessment()">Submit Assessment</button> -->
               </div>
+            </div>
+
           </div>
-          <button type="button" class="transparent-btn" onclick="hide_admin_terminal();" class="footer-text">Landing Page</p>
+        </span>
+      </form>
+    </main>
+
+    <!-- footer  -------------------------------------------->
+    <footer class="footer-bar">
+      <div class="footer-text-flex">
+        <div>
+          <p class="footer-text"><strong>Email/</strong></p>
+          <p class="footer-text">joshua@evariste.io</p>
+        </div>
+        <span>
+          <button type="button" class="transparent-btn footer-text"
+            onclick="show_admin_terminal();">Administrators</button>
+        </span>
+      </div>
+    </footer>
+  </div>
+
+  <!--------------- admin login --------------------------------------------->
+
+  <!--------------- admin terminal ----------------------------------------------->
+  <div class="admin-terminal" id="admin-terminal">
+    <div class="admin-terminal-container">
+      <span class="admin-terminal-title"><Strong>Administrative Portal</Strong></span>
+      <div class="admin-terminal-content">
+        <nav class="admin-terminal-sidebar">
+          <button type="button" onclick="show_user_results();"> user results </button>
+          <button type="button" onclick="show_analytics();"> analytics </button>
+          <button type="button" onclick="show_acct_mgmt();"> account management </button>
+          <button type="button" onclick="show_advanced();"> advanced </button>
+        </nav>
+        <div class="admin-terminal-main">
+          <div class="main-user-results" id="main-user-results">
+            <div id="Ass"></div>
+          </div>
+          <div className="main-analytics" id="main-analytics">
+            <div className="main-content">
+              [visualisations/graphs, button where data can be downloaded as a csv
+              file if clicked]
+            </div>
+          </div>
+          <div className="main-acct-mgmt" id="main-acct-mgmt">
+            <div className="main-content">
+              [request password change link to be sent to email]
+            </div>
+          </div>
+          <div className="main-advanced" id="main-advanced">
+            <div className="main-content">
+              [tools for advanced admins. can create new accounts, can send reset
+              password links to admin emails can view list of all admin accounts]
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    <a href="index.html" type="button" class="transparent-btn footer-text">Landing
+      Page</a>
+  </div>
 
-    <script type="text/javascript" src="./scripts/index-public.js"></script>
-    <script type="text/javascript" src="../src/index.js"></script>
-    <script type="text/javascript" src="../src/AdminTerminal.js"></script>
-  </body>
+  <script type="text/javascript" src="./scripts/index-public.js"></script>
+  <script type="text/javascript" src="../src/index.js"></script>
+</body>
+
 </html>

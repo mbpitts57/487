@@ -1,6 +1,7 @@
-import InsertVisitor from './App';
-import {UserResultsView, AnalyticsView, AccountMgmtView, AdvancedAdminView, ViewEntries} from './AdminTerminal';
-import AdminLogin from './AdminLogin';
+import { InsertVisitor } from './App';
+// import { UserEntryView, AnalyticsView, AccountMgmtView, AdvancedAdminView } from './components/AdminTerminal';
+import { AdminTerminal } from './components/AdminTerminal';
+// import AdminLogin from './components/AdminLogin';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -11,26 +12,14 @@ import Amplify from 'aws-amplify';
 import config from './aws-exports';
 Amplify.configure(config);
 
-// ReactDOM.render(
-//   // <React.StrictMode>
-//     <AdminLogin/>, document.getElementById('admin-terminal')
-// );
-
 ReactDOM.render(
-    <InsertVisitor/>, document.getElementById('visitor-info')
+  <InsertVisitor />, document.getElementById('visitor-info')
 );
 
 ReactDOM.render(
-  <React.StrictMode> 
-    <AdminLogin/>, <UserResultsView/>, <ViewEntries/>,
-  </React.StrictMode>, 
-  document.getElementById('main-user-results')
+  <React.StrictMode>
+    <AdminTerminal />
+  </React.StrictMode>, document.getElementById('Ass')
 );
-
-ReactDOM.render(<AnalyticsView/>, document.getElementById('main-analytics'));
-
-ReactDOM.render(<AccountMgmtView/>, document.getElementById('main-acct-mgmt'));
-
-ReactDOM.render(<AdvancedAdminView/>, document.getElementById('main-advanced'));
 
 reportWebVitals();

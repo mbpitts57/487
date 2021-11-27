@@ -6,7 +6,10 @@ var USER_INFO_FIELD_2 = document.getElementById("visitor-info-2");
 var LANDING_TEXT = document.getElementById("landing-text");
 var INDEX_PAGE = document.getElementById("index-page");
 
-// --- admin terminal variables ---------------------------------------------------------------------------------------------------
+// --- admin login page variables ----------------------------------------------------------------------------------------
+var ADMIN_LOGIN = document.getElementById('admin-login');
+
+// --- admin terminal variables ------------------------------------------------------------------------------------------
 var USER_RESULTS = document.getElementById("main-user-results");
 var ANALYTICS = document.getElementById("main-analytics");
 var ACCT_MGMT = document.getElementById("main-acct-mgmt");
@@ -18,7 +21,6 @@ var ADMIN_TERMINAL = document.getElementById("admin-terminal");
 // for 'continue' button on personality assessment.
 // hides personality assessment and shows cognitive assessment.
 function toggle_visibility() {
-  "use strict";
   PER_ASSESSMENT.style.display = "none";
   COG_ASSESSMENT.style.display = "flex";
   console.log(
@@ -29,7 +31,6 @@ function toggle_visibility() {
 // for 'go back' button on cognitive assessment.
 // hides cognitive assessment and shows personality assessment.
 function toggle_visibility_2() {
-  "use strict";
   COG_ASSESSMENT.style.display = "none";
   PER_ASSESSMENT.style.display = "flex";
   console.log(
@@ -40,7 +41,6 @@ function toggle_visibility_2() {
 // for 'continue' button on cognitive assessment page.
 // hides cognitive assessment and shows user info input page.
 function toggle_visibility_3() {
-  "use strict";
   COG_ASSESSMENT.style.display = "none";
   USER_INFO_FIELD.style.display = "flex";
   USER_INFO_FIELD_2.style.display = "flex";
@@ -52,7 +52,6 @@ function toggle_visibility_3() {
 // for 'go back' button on user info input page.
 // hides info input page and shows cognitive assessment.
 function toggle_visibility_4() {
-  "use strict";
   USER_INFO_FIELD.style.display = "none";
   USER_INFO_FIELD_2.style.display = "flex";
   COG_ASSESSMENT.style.display = "flex";
@@ -64,7 +63,6 @@ function toggle_visibility_4() {
 // for 'begin assessment' button on landing page.
 // hides landing page text and shows personality assessment.
 function toggle_visibility_5() {
-  "use strict";
   LANDING_TEXT.style.display = "none";
   PER_ASSESSMENT.style.display = "flex";
   console.log(
@@ -76,13 +74,24 @@ function toggle_visibility_5() {
 // confirmation email is sent and confirmation message is displayed.
 // if requirements are not met, displays error message.
 function submit_assessment() {
-  "use strict";
   console.log(
     "clicked 'submit assessment'. If assessment is properly completed, show thank you message and send confirmation email. If not properly completed, show error message."
   );
 }
 
+// --- admin login page ----------------------------------------------------------------------------------------------------
+
 // --- admin terminal js ---------------------------------------------------------------------------------------------------
+
+// shows admin terminal, hides everything else
+function show_admin_terminal() {
+  INDEX_PAGE.style.display = "none";
+  ADMIN_TERMINAL.style.display = "flex";
+
+  console.log(
+    "clicked administrators button. show admin terminal, hide everything else."
+  );
+}
 
 // shows user results tab in adminal terminal main
 function show_user_results() {
@@ -120,17 +129,9 @@ function show_advanced() {
   console.log("show advanced in admin terminal main");
 }
 
-// hides the index page and shows the admin terminal. should prompt user to log in.
-function show_admin_terminal() {
-  INDEX_PAGE.style.display = "none";
-  ADMIN_TERMINAL.style.display = "block";
-  console.log(
-    "clicked administrators button. show admin terminal, hide everything else."
-  );
-}
-
-// hides the admin terminal and shows the index page.
+// hides the admin terminal and admin login page and shows the index page.
 function hide_admin_terminal() {
+  ADMIN_LOGIN.style.display = "none";
   ADMIN_TERMINAL.style.display = "none";
   INDEX_PAGE.style.display = "block";
 
@@ -138,3 +139,4 @@ function hide_admin_terminal() {
     "clicked landing page button. hide admin terminal, show landing page."
   );
 }
+
