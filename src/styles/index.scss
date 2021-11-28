@@ -6,6 +6,7 @@
 body,
 html {
   @include partial.body-html();
+  overflow-x: hidden;
 }
 
 // --- index styling -----------------------------------------------------------------------------------
@@ -246,15 +247,18 @@ button {
 
 .admin-terminal-container {
   display: flex;
-  width: 75%;
-  margin: auto;
+  width: 60em;
+  margin-left: 10em;
+  margin-right: 10em;
+  margin-bottom: 10em;
+  box-sizing: border-box;
   background: rgb(184, 184, 184);
   box-shadow: 10px 10px 2px rgb(92, 103, 119);
   border-style: outset;
   border-width: 5px;
   border-color: rgb(206, 206, 206);
   flex-direction: column;
-  height: 40em;
+  height: 35em;
 }
 
 .admin-terminal-title {

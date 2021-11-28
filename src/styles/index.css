@@ -7,6 +7,7 @@ html {
   background: #8797af;
   font-family: "Inconsolata", monospace;
   margin: 0px;
+  overflow-x: hidden;
 }
 
 hr {
@@ -303,15 +304,18 @@ button {
 
 .admin-terminal-container {
   display: flex;
-  width: 75%;
-  margin: auto;
+  width: 60em;
+  margin-left: 10em;
+  margin-right: 10em;
+  margin-bottom: 10em;
+  box-sizing: border-box;
   background: #b8b8b8;
   box-shadow: 10px 10px 2px #5c6777;
   border-style: outset;
   border-width: 5px;
   border-color: #cecece;
   flex-direction: column;
-  height: 40em;
+  height: 35em;
 }
 
 .admin-terminal-title {

@@ -4,9 +4,10 @@ import reportWebVitals from "../reportWebVitals";
 import React, { useState, useEffect } from "react";
 import "../styles/App.css";
 import { API } from "aws-amplify";
-// import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
+import { withAuthenticator, AmplifySignOut, AmplifyAuthContainer, AmplifyAuthenticator } from '@aws-amplify/ui-react';
 import { listVisitors } from "../graphql/queries";
 import { deleteVisitor as deleteVisitorMutation } from "../graphql/mutations";
+// import { Visitor } from '../models';
 
 import * as queries from '../graphql/queries';
 // import { withAuthenticator } from "@aws-amplify/ui-react";
@@ -34,44 +35,52 @@ export function AdminTerminal() {
 
   async function deleteVisitor({ id }) {
     const newVisitorsArray = Visitors.filter((Visitor) => Visitor.id !== id);
+    console.log(newVisitorsArray)
+    console.log('1');
+    console.log(id);
     setVisitors(newVisitorsArray);
+    console.log('2');
+    console.log(id);
     await API.graphql({
       query: deleteVisitorMutation,
-      variables: { input: { id } },
+      variables: { id },
     });
+    console.log('3');
   }
 
   return (
-    <div className="AdminTerminal">
-      <h1 class="admin-terminal-h1">Review User Entries</h1>
-      {/* shows a list of all user entries */}
-      <div className="fetchingVisitors">
-        <div className="main-content mc-fetch-visitors">
-          {Visitors.map((Visitor) => (
-            <div className="row" key={Visitor.id || Visitor.visName}>
-              <p>{Visitor.visName}&nbsp;</p>
-              <p>{Visitor.visEmail}&nbsp;</p>
+    <AmplifyAuthenticator>
+      <div className="AdminTerminal">
+        <AmplifySignOut />
+        <h1 class="admin-terminal-h1">Review User Entries</h1>
+        {/* shows a list of all user entries */}
+        <div className="fetchingVisitors">
+          <div className="main-content mc-fetch-visitors">
+            {Visitors.map((Visitor) => (
+              <div className="row" key={Visitor.id || Visitor.visName}>
+                <p>{Visitor.visName}&nbsp;</p>
+                <p>{Visitor.visEmail}&nbsp;</p>
 
-              {/* just changes this from visitor to visitor.id might not work */}
-              <button className="delete-btn" onClick={() => deleteVisitor(Visitor)}>
-                Delete Visitor
-              </button>
-            </div>))
-          }
-          <button onClick={listEntries}>
-            Console Log all Visitors
-          </button>
-        </div>
+                {/* just changes this from visitor to visitor.id might not work */}
+                <button className="delete-btn" onClick={() => deleteVisitor(Visitor)}>
+                  Delete Visitor
+                </button>
+              </div>))
+            }
+            <button onClick={listEntries}>
+              Console Log all Visitors
+            </button>
+          </div>
 
-        <div className="search-bar">((search icon)) Search: </div>
-        <div className="filter-users">((button, dropdown menu)Filter Results</div>
-        <div>
-          [search bar, filter by scores, name alphabetical, most recent, oldest
-          rows of all user inputs fetched from database]
+          <div className="search-bar">((search icon)) Search: </div>
+          <div className="filter-users">((button, dropdown menu)Filter Results</div>
+          <div>
+            [search bar, filter by scores, name alphabetical, most recent, oldest
+            rows of all user inputs fetched from database]
+          </div>
         </div>
       </div>
-    </div>
-
+    </AmplifyAuthenticator>
   );
 }
 
@@ -109,6 +118,6 @@ export function AdvancedAdminView() {
   );
 }
 
-// export default withAuthenticator(AdminTerminal);
+export default withAuthenticator(AdminTerminal);
 
 reportWebVitals();
