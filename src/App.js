@@ -30,7 +30,7 @@ export function InsertVisitor() {
   }
 
   return (
-    <div className="InsertVisitor">
+    <div className="">
       <div className="user-input-field">
         <label className="p-text">Please Enter Your Full Name:</label>
         <input

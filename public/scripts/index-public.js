@@ -53,7 +53,7 @@ function toggle_visibility_3() {
 // hides info input page and shows cognitive assessment.
 function toggle_visibility_4() {
   USER_INFO_FIELD.style.display = "none";
-  USER_INFO_FIELD_2.style.display = "flex";
+  USER_INFO_FIELD_2.style.display = "none";
   COG_ASSESSMENT.style.display = "flex";
   console.log(
     "clicked 'go back'. hide user info input page, show cognitive assessment."
@@ -139,4 +139,6 @@ function hide_admin_terminal() {
     "clicked landing page button. hide admin terminal, show landing page."
   );
 }
+
+
 

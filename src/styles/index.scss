@@ -55,12 +55,15 @@ hr {
   font-size: 1.8em;
   box-sizing: border-box;
   padding: 1em;
+  color: rgb(56, 64, 75);
+  margin-bottom: 8em !important;
 
   button {
-    height: 3.5em;
-    width: 9em;
+    height: 1.6em;
+    width: 10em;
     font-size: .5em;
-    margin-top: 1em;
+    margin-top: 1.5em;
+    font-size: .8em;
   }
 }
 
@@ -130,6 +133,7 @@ hr {
   display: none;
   @include partial.container-styling();
   @include partial.container-background();
+  margin-bottom: 2em;
 
   div {
     margin-top: .2em;
@@ -141,6 +145,7 @@ hr {
 .user-input-field-2 {
   display: none;
   @include partial.container-styling();
+  margin-bottom: 2em;
 
   div {
     margin-top: .2em;

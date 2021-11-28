@@ -38,6 +38,7 @@ hr {
   margin-top: 1em !important;
   font-size: 1.8em;
   align-items: center;
+  box-sizing: border-box;
   background: #b8b8b8;
   box-shadow: 10px 10px 2px #5c6777;
   border-style: outset;
@@ -56,6 +57,7 @@ hr {
 }
 
 .span-landing {
+  box-sizing: border-box;
   background: #b8b8b8;
   box-shadow: 10px 10px 2px #5c6777;
   border-style: outset;
@@ -64,6 +66,7 @@ hr {
   width: 50%;
   margin: auto;
   justify-content: center;
+  box-sizing: border-box;
   margin-top: 50px !important;
   padding: 20px;
   align-items: center;
@@ -72,16 +75,20 @@ hr {
   font-size: 1.8em;
   box-sizing: border-box;
   padding: 1em;
+  color: #38404b;
+  margin-bottom: 8em !important;
 }
 .span-landing button {
-  height: 3.5em;
-  width: 9em;
+  height: 1.6em;
+  width: 10em;
   font-size: 0.5em;
-  margin-top: 1em;
+  margin-top: 1.5em;
+  font-size: 0.8em;
 }
 
 .personality-assessment {
   display: none;
+  box-sizing: border-box;
   background: #b8b8b8;
   box-shadow: 10px 10px 2px #5c6777;
   border-style: outset;
@@ -90,6 +97,7 @@ hr {
   width: 50%;
   margin: auto;
   justify-content: center;
+  box-sizing: border-box;
   margin-top: 50px !important;
   padding: 20px;
   align-items: center;
@@ -99,6 +107,7 @@ hr {
 
 .cognitive-assessment {
   display: none;
+  box-sizing: border-box;
   background: #b8b8b8;
   box-shadow: 10px 10px 2px #5c6777;
   border-style: outset;
@@ -107,6 +116,7 @@ hr {
   width: 50%;
   margin: auto;
   justify-content: center;
+  box-sizing: border-box;
   margin-top: 50px !important;
   padding: 20px;
   align-items: center;
@@ -164,11 +174,13 @@ hr {
 
 .user-input-field {
   display: none;
+  box-sizing: border-box;
   margin-top: 50px !important;
   padding: 20px;
   align-items: center;
   flex-direction: column;
   margin-bottom: 50px !important;
+  box-sizing: border-box;
   background: #b8b8b8;
   box-shadow: 10px 10px 2px #5c6777;
   border-style: outset;
@@ -177,6 +189,7 @@ hr {
   width: 50%;
   margin: auto;
   justify-content: center;
+  margin-bottom: 2em;
 }
 .user-input-field div {
   margin-top: 0.2em;
@@ -186,11 +199,13 @@ hr {
 
 .user-input-field-2 {
   display: none;
+  box-sizing: border-box;
   margin-top: 50px !important;
   padding: 20px;
   align-items: center;
   flex-direction: column;
   margin-bottom: 50px !important;
+  margin-bottom: 2em;
 }
 .user-input-field-2 div {
   margin-top: 0.2em;
@@ -250,6 +265,7 @@ hr {
   align-items: center;
   flex-direction: column;
   margin-bottom: 50px !important;
+  box-sizing: border-box;
   background: #b8b8b8;
   box-shadow: 10px 10px 2px #5c6777;
   border-style: outset;
