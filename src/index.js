@@ -13,7 +13,7 @@ import config from './aws-exports';
 Amplify.configure(config);
 
 ReactDOM.render(
-  <InsertVisitor />, document.getElementById('visitor-info')
+  <InsertVisitor />, document.getElementById('visitor-test')
 );
 
 ReactDOM.render(
