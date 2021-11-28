@@ -3,7 +3,10 @@ import './styles/App.css';
 import { API } from 'aws-amplify';
 // import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { listVisitors } from './graphql/queries';
-import { createVisitor as createVisitorMutation, deleteVisitor as deleteVisitorMutation } from './graphql/mutations';
+import {
+  createVisitor as createVisitorMutation,
+  // deleteVisitor as deleteVisitorMutation 
+} from './graphql/mutations';
 
 const initialFormState = { visName: '', visEmail: '' }
 
@@ -27,36 +30,25 @@ export function InsertVisitor() {
     setFormData(initialFormState);
   }
 
-  async function deleteVisitor({ id }) {
-    const newVisitorsArray = Visitors.filter(Visitor => Visitor.id !== id);
-    setVisitors(newVisitorsArray);
-    await API.graphql({ query: deleteVisitorMutation, variables: { input: { id } } });
-  }
-
   return (
-    <div className="InsertVisitor">
-      <h1>My Visitors App</h1>
-      <input
-        onChange={e => setFormData({ ...formData, 'visName': e.target.value })}
-        placeholder="Visitor visName"
-        value={formData.visName}
-      />
-      <input
-        onChange={e => setFormData({ ...formData, 'visEmail': e.target.value })}
-        placeholder="Visitor visEmail"
-        value={formData.visEmail}
-      />
-      <button onClick={createVisitor}>Create Visitor</button>
-      <div style={{ marginBottom: 30 }}>
-        {
-          Visitors.map(Visitor => (
-            <div key={Visitor.id || Visitor.visName}>
-              <h2>{Visitor.visName}</h2>
-              <p>{Visitor.visEmail}</p>
-              <button onClick={() => deleteVisitor(Visitor)}>Delete Visitor</button>
-            </div>
-          ))
-        }
+    <div className="">
+      <div>
+        <label className="p-text">Please Enter Your Full Name:</label>
+        <input
+          onChange={e => setFormData({ ...formData, 'visName': e.target.value })}
+          placeholder=""
+          value={formData.visName}
+        />
+        <br></br>
+        <label className="p-text">Also Kindly Enter Your Email:</label>
+        <input
+          onChange={e => setFormData({ ...formData, 'visEmail': e.target.value })}
+          placeholder=""
+          value={formData.visEmail}
+        />
+        <br></br>
+
+        <button type="submit" onClick={createVisitor}>Submit Assessment</button>
       </div>
     </div>
   );

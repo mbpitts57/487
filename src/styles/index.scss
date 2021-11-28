@@ -259,10 +259,22 @@ button {
 
 .admin-terminal-title {
   font-size: 3.5em;
-  padding: 2%;
-  margin: 1px;
+  padding: 0.15em;
+  margin: 0.15em;
   background: black;
   color: white;
+}
+
+.admin-terminal-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify-content-center {
+  justify-content: center;
+  margin: 1em;
+  text-decoration: none;
+  font-size: 1.5em;
 }
 
 .admin-terminal-content {

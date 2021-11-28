@@ -44,7 +44,6 @@ export declare class Visitor {
   readonly id: string;
   readonly visName: string;
   readonly visEmail: string;
-  readonly VisPerAssessment: PerAssessment;
   readonly createdAt?: string;
   readonly updatedAt?: string;
   constructor(init: ModelInit<Visitor, VisitorMetaData>);

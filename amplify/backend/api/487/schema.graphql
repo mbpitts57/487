@@ -18,6 +18,5 @@ type Visitor @model @auth(rules: [{allow: public}]) {
   id: ID!
   visName: String!
   visEmail: String!
-  VisPerAssessment: PerAssessment! @connection
 }
  

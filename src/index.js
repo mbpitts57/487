@@ -13,7 +13,7 @@ import config from './aws-exports';
 Amplify.configure(config);
 
 ReactDOM.render(
-  <InsertVisitor />, document.getElementById('visitor-test')
+  <InsertVisitor />, document.getElementById('visitor-info')
 );
 
 ReactDOM.render(
@@ -22,4 +22,4 @@ ReactDOM.render(
   </React.StrictMode>, document.getElementById('Ass')
 );
 
-reportWebVitals();
+reportWebVitals(console.log);

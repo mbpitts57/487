@@ -55,7 +55,7 @@
     <!-- beginning of main content -->
     <main>
       <!-- landing page paragraph, introduction to evariste with button to start assessment -->
-      <div class="span-landing" id="landing-text">
+      <div class="span-landing" id="landing">
         <span>
           Evariste is System 9's internal developer screening tool.<br><br>
           Continue to the assessment, complete it, and we will be in touch.<br>
@@ -608,26 +608,26 @@
         <!-- submit/user info input portion of form, visible after clicking 'continue' button on cognitive assessment -->
         <span>
           <div class="s1-form" id="form-part-3">
-            <div id="visitor-info">
-              <!-- <div>
-                            <label for="visitorName" class="p-text">Please Enter Your Full Name:</label>
-                            <textarea type="text" id="visitorName" value="visitorName" placeholder="" name="visitorName" id="visitorName" required></textarea>
-                          </div>
-          
-                          <div>
-                            <label for="visitorName" class="p-text">Also Kindly Enter Your Email:</label>
-                            <textarea type="email" id="visitorEmail" value="visitorEmail" placeholder="" name="visitorEmail" id="visitorEmail" required></textarea>
-                          </div> -->
-            </div>
+            <div id="visitor-info" class="user-input-field">
+              <div id="insert-visitor">
 
-            <div class="user-input-field-2" id="visitor-info-2">
+                <!-- <label for="visitorName" class="p-text">Please Enter Your Full Name:</label>
+                                <textarea type="text" id="visitorName" value="visitorName" placeholder="" name="visitorName" id="visitorName" required></textarea>
+                              </div>
+              
+                              <div>
+                                <label for="visitorName" class="p-text">Also Kindly Enter Your Email:</label>
+                                <textarea type="email" id="visitorEmail" value="visitorEmail" placeholder="" name="visitorEmail" id="visitorEmail" required></textarea> -->
+              </div>
+            </div>
+            <div id="visitor-info-2" class="user-input-field">
               <span> put a captcha here </span>
+
               <div class="btn-container">
                 <button type="button" id="r-btn2" class="back-btn" onclick="toggle_visibility_4();">Go Back</button>
                 <!-- <button type="submit" class="continue-btn" name="submit" onclick="submit_assessment()">Submit Assessment</button> -->
               </div>
             </div>
-
           </div>
         </span>
       </form>
@@ -651,42 +651,45 @@
   <!--------------- admin login --------------------------------------------->
 
   <!--------------- admin terminal ----------------------------------------------->
+
   <div class="admin-terminal" id="admin-terminal">
-    <div class="admin-terminal-container">
-      <span class="admin-terminal-title"><Strong>Administrative Portal</Strong></span>
-      <div class="admin-terminal-content">
-        <nav class="admin-terminal-sidebar">
-          <button type="button" onclick="show_user_results();"> user results </button>
-          <button type="button" onclick="show_analytics();"> analytics </button>
-          <button type="button" onclick="show_acct_mgmt();"> account management </button>
-          <button type="button" onclick="show_advanced();"> advanced </button>
-        </nav>
-        <div class="admin-terminal-main">
-          <div class="main-user-results" id="main-user-results">
-            <div id="Ass"></div>
-          </div>
-          <div className="main-analytics" id="main-analytics">
-            <div className="main-content">
-              [visualisations/graphs, button where data can be downloaded as a csv
-              file if clicked]
+    <div class="admin-terminal-flex">
+      <a href="index.html" type="button" class="transparent-btn justify-content-center footer-text">Evariste
+      </a>
+      <div class="admin-terminal-container">
+        <span class="admin-terminal-title"><Strong>Administrative Portal</Strong></span>
+        <div class="admin-terminal-content">
+          <nav class="admin-terminal-sidebar">
+            <button type="button" onclick="show_user_results();"> user results </button>
+            <button type="button" onclick="show_analytics();"> analytics </button>
+            <button type="button" onclick="show_acct_mgmt();"> account management </button>
+            <button type="button" onclick="show_advanced();"> advanced </button>
+          </nav>
+          <div class="admin-terminal-main">
+            <div class="main-user-results" id="main-user-results">
+              <div id="Ass"></div>
             </div>
-          </div>
-          <div className="main-acct-mgmt" id="main-acct-mgmt">
-            <div className="main-content">
-              [request password change link to be sent to email]
+            <div className="main-analytics" id="main-analytics">
+              <div className="main-content">
+                [visualisations/graphs, button where data can be downloaded as a csv
+                file if clicked]
+              </div>
             </div>
-          </div>
-          <div className="main-advanced" id="main-advanced">
-            <div className="main-content">
-              [tools for advanced admins. can create new accounts, can send reset
-              password links to admin emails can view list of all admin accounts]
+            <div className="main-acct-mgmt" id="main-acct-mgmt">
+              <div className="main-content">
+                [request password change link to be sent to email]
+              </div>
+            </div>
+            <div className="main-advanced" id="main-advanced">
+              <div className="main-content">
+                [tools for advanced admins. can create new accounts, can send reset
+                password links to admin emails can view list of all admin accounts]
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <a href="index.html" type="button" class="transparent-btn footer-text">Landing
-      Page</a>
   </div>
 
   <script type="text/javascript" src="./scripts/index-public.js"></script>

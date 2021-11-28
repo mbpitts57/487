@@ -43,15 +43,17 @@ export function AdminTerminal() {
 
   return (
     <div className="AdminTerminal">
-      <h1>Review User Entries</h1>
+      <h1 class="admin-terminal-h1">Review User Entries</h1>
       {/* shows a list of all user entries */}
       <div className="fetchingVisitors">
-        <div className="main-content">
+        <div className="main-content mc-fetch-visitors">
           {Visitors.map((Visitor) => (
             <div className="row" key={Visitor.id || Visitor.visName}>
               <p>{Visitor.visName}&nbsp;</p>
               <p>{Visitor.visEmail}&nbsp;</p>
-              <button class="delete-btn" onClick={() => deleteVisitor(Visitor)}>
+
+              {/* just changes this from visitor to visitor.id might not work */}
+              <button className="delete-btn" onClick={() => deleteVisitor(Visitor)}>
                 Delete Visitor
               </button>
             </div>))

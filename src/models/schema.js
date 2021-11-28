@@ -184,19 +184,6 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "VisPerAssessment": {
-                    "name": "VisPerAssessment",
-                    "isArray": false,
-                    "type": {
-                        "model": "PerAssessment"
-                    },
-                    "isRequired": true,
-                    "attributes": [],
-                    "association": {
-                        "connectionType": "BELONGS_TO",
-                        "targetName": "visitorVisPerAssessmentId"
-                    }
-                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -242,5 +229,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "4113689d24b06ccf4b50e58b1df46655"
+    "version": "027b63775df8e5f7b50b1db0e2e8d0c6"
 };

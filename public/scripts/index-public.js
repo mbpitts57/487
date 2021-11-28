@@ -2,8 +2,9 @@
 var PER_ASSESSMENT = document.getElementById("per");
 var COG_ASSESSMENT = document.getElementById("cog");
 var USER_INFO_FIELD = document.getElementById("visitor-info");
-var USER_INFO_FIELD_2 = document.getElementById("visitor-info-2");
-var LANDING_TEXT = document.getElementById("landing-text");
+var USER_INFO_FIELD2 = document.getElementById("visitor-info-2");
+
+var LANDING_TEXT = document.getElementById("landing");
 var INDEX_PAGE = document.getElementById("index-page");
 
 // --- admin login page variables ----------------------------------------------------------------------------------------
@@ -43,7 +44,7 @@ function toggle_visibility_2() {
 function toggle_visibility_3() {
   COG_ASSESSMENT.style.display = "none";
   USER_INFO_FIELD.style.display = "flex";
-  USER_INFO_FIELD_2.style.display = "flex";
+  USER_INFO_FIELD2.style.display = "flex";
   console.log(
     "clicked 'continue'. hide cognitive assessment, show user info input page."
   );
@@ -53,7 +54,7 @@ function toggle_visibility_3() {
 // hides info input page and shows cognitive assessment.
 function toggle_visibility_4() {
   USER_INFO_FIELD.style.display = "none";
-  USER_INFO_FIELD_2.style.display = "none";
+  USER_INFO_FIELD2.style.display = "none";
   COG_ASSESSMENT.style.display = "flex";
   console.log(
     "clicked 'go back'. hide user info input page, show cognitive assessment."
