@@ -1,6 +1,7 @@
 import { InsertVisitor } from './App';
 // import { UserEntryView, AnalyticsView, AccountMgmtView, AdvancedAdminView } from './components/AdminTerminal';
 import { AdminTerminal } from './components/AdminTerminal';
+import { AdminTerminal2 } from './components/AdminTerminal2';
 // import AdminLogin from './components/AdminLogin';
 import { ChangePassword } from './components/ChangePassword';
 import { AuthStateApp } from './components/Auth';
@@ -18,18 +19,24 @@ ReactDOM.render(
   <InsertVisitor />, document.getElementById('visitor-info')
 );
 
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <AdminTerminal />
+//   </React.StrictMode>, document.getElementById('k')
+// );
+
 ReactDOM.render(
   <React.StrictMode>
-    <AdminTerminal />
-  </React.StrictMode>, document.getElementById('Ass')
+    <AdminTerminal2 />
+  </React.StrictMode>, document.getElementById('k')
 );
 
-ReactDOM.render(
-  <ChangePassword />, document.getElementById('change-password')
-);
+// ReactDOM.render(
+//   <ChangePassword />, document.getElementById('change-password')
+// );
 
-ReactDOM.render(
-  <AuthStateApp />, document.getElementById('root')
-);
+// ReactDOM.render(
+//   <AuthStateApp />, document.getElementById('root')
+// );
 
 reportWebVitals();

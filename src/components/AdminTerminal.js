@@ -4,10 +4,11 @@ import reportWebVitals from "../reportWebVitals";
 import React, { useState, useEffect } from "react";
 import "../styles/App.css";
 import { API } from "aws-amplify";
-import { withAuthenticator, AmplifySignOut, AmplifyAuthContainer, AmplifyAuthenticator } from '@aws-amplify/ui-react';
+import { withAuthenticator, AmplifySignOut, AmplifyAuthenticator, AmplifySignUp } from '@aws-amplify/ui-react';
 import { listVisitors } from "../graphql/queries";
 import { deleteVisitor as deleteVisitorMutation } from "../graphql/mutations";
-// import { Visitor } from '../models';
+import '../styles/App.css';
+import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
 
 import * as queries from '../graphql/queries';
 // import { withAuthenticator } from "@aws-amplify/ui-react";
@@ -16,6 +17,15 @@ import * as queries from '../graphql/queries';
 
 export function AdminTerminal() {
   const [Visitors, setVisitors] = useState([]);
+  const [authState, setAuthState] = React.useState();
+  const [user, setUser] = React.useState();
+
+  React.useEffect(() => {
+    return onAuthUIStateChange((nextAuthState, authData) => {
+      setAuthState(nextAuthState);
+      setUser(authData)
+    });
+  }, []);
 
   useEffect(() => {
     fetchVisitors();
@@ -48,7 +58,7 @@ export function AdminTerminal() {
     console.log('3');
   }
 
-  return (
+  return authState === AuthState.SignedIn && user ? (
     <AmplifyAuthenticator>
       <div className="AdminTerminal">
         <AmplifySignOut />
@@ -80,6 +90,17 @@ export function AdminTerminal() {
           </div>
         </div>
       </div>
+    </AmplifyAuthenticator>
+  ) : (
+    <AmplifyAuthenticator>
+      <AmplifySignUp
+        slot="sign-up"
+        formFields={[
+          { type: "username" },
+          { type: "password" },
+          { type: "email" }
+        ]}
+      />
     </AmplifyAuthenticator>
   );
 }
