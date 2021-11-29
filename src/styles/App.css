@@ -68,3 +68,35 @@
   color: #7c0000;
   height: 2em;
 }
+
+amplify-section {
+  --font-family: "Inconsolata", monospace;
+  --amplify-font-family: $typography-font-family;
+  --background-color: var(--amplify-background-color);
+}
+
+.section {
+  position: relative;
+  margin-bottom: var(--margin-bottom, 20px);
+  background-color: var(--background-color);
+  padding: var(--padding, 35px 40px);
+  text-align: left;
+  display: inline-block;
+  box-shadow: var(--box-shadow, 1px 1px 4px 0 rgba(0, 0, 0, 0.15));
+  box-sizing: border-box;
+  font-family: "Inconsolata", monospace;
+  width: 100%;
+  min-width: var(--min-width, 20rem);
+}
+
+amplify-authenticator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Inconsolata", monospace;
+  min-width: 80vw;
+  padding: 10vmin;
+  --amplify-font-family: $typography-font-family;
+  --amplify-primary-color: #faa433;
+}
