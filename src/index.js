@@ -1,6 +1,6 @@
 import { InsertVisitor } from './App';
 import { AdminTerminal } from './components/AdminTerminal';
-
+import { InsertEntry } from './Assessment';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css';
@@ -13,6 +13,10 @@ Amplify.configure(config);
 
 ReactDOM.render(
   <InsertVisitor />, document.getElementById('visitor-info')
+);
+
+ReactDOM.render(
+  <InsertEntry />, document.getElementById('test')
 );
 
 ReactDOM.render(
