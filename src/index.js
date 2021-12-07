@@ -16,7 +16,7 @@ ReactDOM.render(
 );
 
 ReactDOM.render(
-  <InsertEntry />, document.getElementById('test')
+  <InsertEntry />, document.getElementById('insertentry')
 );
 
 ReactDOM.render(

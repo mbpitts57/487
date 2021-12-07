@@ -11,7 +11,7 @@ html {
 }
 
 main {
-  min-height: 76vh;
+  min-height: 79vh;
 }
 
 /* for all screens larger than a tablet */
@@ -314,7 +314,7 @@ main {
 
   .admin-terminal-container {
     display: flex;
-    width: 65em;
+    width: 80% !important;
     margin-left: 10em;
     margin-right: 10em;
     margin-bottom: 10em;
@@ -325,9 +325,8 @@ main {
     border-width: 5px;
     border-color: #cecece;
     flex-direction: column;
-    height: 32em;
+    height: 35em;
     position: relative;
-    right: 150px;
     margin-top: 3em;
   }
 
@@ -349,7 +348,6 @@ main {
     margin: 1em;
     text-decoration: none;
     font-size: 1.5em;
-    padding-left: 5.6em;
   }
 
   .admin-terminal-content {
@@ -739,7 +737,7 @@ main {
 
   .admin-terminal-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .admin-terminal-sidebar {
@@ -766,6 +764,26 @@ main {
     margin: 0.5em;
     margin-right: 1%;
     margin-top: 1%;
+    justify-content: center;
+  }
+
+  .main-content {
+    justify-content: center;
+    width: 14em;
+  }
+
+  .imgs img {
+    height: 1em;
+    width: 1em;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .images {
+    height: 1em;
+    width: 1em;
+    display: flex;
+    flex-direction: row;
   }
 
   .main-user-results {

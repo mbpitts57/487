@@ -1,14 +1,17 @@
 import "../styles/index.css";
 import reportWebVitals from "../reportWebVitals";
 
+import hobbies from '../Rplothobbies.jpg';
+import sleep from '../Rplotsleep.jpg';
+import vices from '../Rplotvices.jpg';
+
 import React, { useState, useEffect } from "react";
 import "../styles/App.css";
 import { API } from "aws-amplify";
-import { withAuthenticator, AmplifySignOut, AmplifyAuthenticator, AmplifyAuthContainer, AmplifySignUp } from '@aws-amplify/ui-react';
-import { listVisitors } from "../graphql/queries";
-import { deleteVisitor as deleteVisitorMutation } from "../graphql/mutations";
-// import { Visitor } from '../models';
-import '../styles/App.css';
+import { withAuthenticator, AmplifySignOut, AmplifySignIn, AmplifyAuthenticator, AmplifyAuthContainer } from '@aws-amplify/ui-react';
+import { listEntrys } from "../graphql/queries";
+import { deleteEntry as deleteEntryMutation } from "../graphql/mutations";
+// import { Entry } from '../models';
 import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
 
 import * as queries from '../graphql/queries';
@@ -17,20 +20,18 @@ import * as queries from '../graphql/queries';
 // ---------------------------------------------------------------------------------------------------------------
 
 export function AdminTerminal() {
-  const [Visitors, setVisitors] = useState([]);
+  const [Entrys, setEntrys] = useState([]);
   const [authState, setAuthState] = React.useState();
   const [user, setUser] = React.useState();
 
   var USER_RESULTS = document.getElementById("main-user-results");
   var ANALYTICS = document.getElementById("main-analytics");
-  var ACCT_MGMT = document.getElementById("main-acct-mgmt");
   var ADVANCED = document.getElementById("main-advanced");
 
   // shows user results tab in adminal terminal main
   function show_user_results() {
     USER_RESULTS.style.display = "flex";
     ANALYTICS.style.display = "none";
-    ACCT_MGMT.style.display = "none";
     ADVANCED.style.display = "none";
     console.log("show user results in admin terminal main");
   }
@@ -39,7 +40,6 @@ export function AdminTerminal() {
   function show_analytics() {
     USER_RESULTS.style.display = "none";
     ANALYTICS.style.display = "flex";
-    ACCT_MGMT.style.display = "none";
     ADVANCED.style.display = "none";
     console.log("show analytics in admin terminal main");
   }
@@ -48,7 +48,6 @@ export function AdminTerminal() {
   function show_advanced() {
     USER_RESULTS.style.display = "none";
     ANALYTICS.style.display = "none";
-    ACCT_MGMT.style.display = "none";
     ADVANCED.style.display = "flex";
     console.log("show advanced in admin terminal main");
   }
@@ -61,26 +60,26 @@ export function AdminTerminal() {
   }, []);
 
   useEffect(() => {
-    fetchVisitors();
+    fetchEntrys();
   }, []);
 
   async function logEntries() {
-    const allVisitors = await API.graphql({ query: queries.listVisitors });
-    console.log(allVisitors);
+    const allEntrys = await API.graphql({ query: queries.listEntrys });
+    console.log(allEntrys);
   }
 
-  async function fetchVisitors() {
+  async function fetchEntrys() {
     const apiData = await API.graphql({
-      query: listVisitors
+      query: listEntrys
     });
-    setVisitors(apiData.data.listVisitors.items);
+    setEntrys(apiData.data.listEntrys.items);
   }
 
-  async function deleteVisitor({ id }) {
-    const newVisitorsArray = Visitors.filter((Visitor) => Visitor.id !== id);
-    setVisitors(newVisitorsArray);
+  async function deleteEntry({ id }) {
+    const newEntrysArray = Entrys.filter((Entry) => Entry.id !== id);
+    setEntrys(newEntrysArray);
     await API.graphql({
-      query: deleteVisitorMutation,
+      query: deleteEntryMutation,
       variables: { id },
     });
   }
@@ -105,38 +104,43 @@ export function AdminTerminal() {
                   <div className="fetchingVisitors">
                     <h1 className="admin-terminal-h1">Review User Entries</h1>
                     <div className="main-content mc-fetch-visitors">
-                      {Visitors.map((Visitor) => (
-                        <div className="row" key={Visitor.id || Visitor.visName}>
-                          <p>{Visitor.visName}&nbsp;</p>
-                          <button className="delete-btn" onClick={() => deleteVisitor(Visitor)}>
-                            Delete Visitor
-                          </button>
+                      <p>Name  Email  Answer1  Answer2  Answer3  Answer4  Answer5  Answer6</p>
+                      {Entrys.map((Entry) => (
+                        <div className="row" key={Entry.id || Entry.visName}>
+                          <p>{Entry.visName}&nbsp;</p>
+                          <p>{Entry.visEmail}&nbsp;</p>
+                          <p>{Entry.p_answer1}&nbsp;</p>
+                          <p>{Entry.p_answer2}&nbsp;</p>
+                          <p>{Entry.p_answer3}&nbsp;</p>
+                          <p>{Entry.p_answer4}&nbsp;</p>
+                          <p>{Entry.p_answer5}&nbsp;</p>
+                          <p>{Entry.p_answer6}&nbsp;</p>
+                          {/* <button className="delete-btn" onClick={() => deleteEntry(Entry)}>
+                            Delete Entry
+                          </button> */}
                         </div>))
                       }
                       <button onClick={logEntries}>
-                        Console Log all Visitors
+                        Console Log all Entrys
                       </button>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="main-analytics" id="main-analytics">
-                <div className="main-content">
-                  {/* [visualisations/graphs, button where data can be downloaded as a csv
-                  file if clicked] */}
-                  {/* <img src="../../public/images/hobbies"></img> */}
-                </div>
-              </div>
-              <div className="main-acct-mgmt" id="main-acct-mgmt">
-                <div className="main-content">
-                  <div id="change-password"></div>
-                  for future use
+                <div className="main-content imgs">
+                  <img className="images" alt="" src={hobbies}></img>
+                  <img className="images" alt="" src={sleep}></img>
+                  <img className="images" alt="" src={vices}></img>
                 </div>
               </div>
               <div className="main-advanced" id="main-advanced">
                 <div className="main-content">
                   <a href="https://us-east-2.console.aws.amazon.com/amplify/home?region=us-east-2#/dvrouwci8gops">Navigate
                     to the AWS Amplify Console</a>
+                  <br></br>
+                  <br></br>
+                  <br></br>
                   <AmplifySignOut />
                 </div>
               </div>
@@ -148,14 +152,9 @@ export function AdminTerminal() {
   ) : (
     <AmplifyAuthContainer>
       <AmplifyAuthenticator>
-        <AmplifySignUp
-          slot="sign-up"
-          formFields={[
-            { type: "username" },
-            { type: "password" },
-            { type: "email" }
-          ]}
-        />
+        <AmplifySignIn slot="sign-in">
+          <div slot="secondary-footer-content"></div>
+        </AmplifySignIn>
       </AmplifyAuthenticator>
     </AmplifyAuthContainer >
   );
@@ -163,37 +162,6 @@ export function AdminTerminal() {
 
 // --------------------------------------------------------------------------------------------------------------------
 
-export function AnalyticsView() {
-  return (
-    <div className="Tab2" id="AnalyticsView">
-      <div className="main-content">
-        [visualisations/graphs, button where data can be downloaded as a csv
-        file if clicked]
-      </div>
-    </div>
-  );
-}
-
-// export function AccountMgmtView() {
-//   return (
-//     <div className="Tab3" id="AccountMgmtView">
-//       <div className="main-content">
-//         [request password change link to be sent to email]
-//       </div>
-//     </div>
-//   );
-// }
-
-export function AdvancedAdminView() {
-  return (
-    <div className="Tab4" id="AdvancedAdminView">
-      <div className="main-content">
-        [tools for advanced admins. can create new accounts, can send reset
-        password links to admin emails can view list of all admin accounts]
-      </div>
-    </div>
-  );
-}
 
 export default withAuthenticator(AdminTerminal);
 

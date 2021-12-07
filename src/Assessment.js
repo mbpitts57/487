@@ -37,66 +37,87 @@ export function InsertEntry() {
 
     return (
         <div className="InsertEntry">
-            <div>
-                <label className="p-text">question1</label>
-                <input
-                    onChange={e => setFormData({ ...formData, 'p_answer1': e.target.value })}
-                    placeholder=""
-                    value={formData.p_answer1}
-                />
-                <br></br>
-                <label className="p-text">question2</label>
-                <input
-                    onChange={e => setFormData({ ...formData, 'p_answer2': e.target.value })}
-                    placeholder=""
-                    value={formData.p_answer2}
-                />
-                <br></br>
-                <label className="p-text">question3</label>
-                <input
-                    onChange={e => setFormData({ ...formData, 'p_answer3': e.target.value })}
-                    placeholder=""
-                    value={formData.p_answer3}
-                />
-                <br></br>
-                <label className="p-text">question4</label>
-                <input
-                    onChange={e => setFormData({ ...formData, 'p_answer4': e.target.value })}
-                    placeholder=""
-                    value={formData.p_answer4}
-                />
-                <br></br>
-                <label className="p-text">question5</label>
-                <input
-                    onChange={e => setFormData({ ...formData, 'p_answer5': e.target.value })}
-                    placeholder=""
-                    value={formData.p_answer5}
-                />
-                <br></br>
-                <label className="p-text">question6</label>
-                <input
-                    onChange={e => setFormData({ ...formData, 'p_answer6': e.target.value })}
-                    placeholder=""
-                    value={formData.p_answer6}
-                />
-                <br></br>
-                <label className="p-text">Name:</label>
-                <input
-                    onChange={e => setFormData({ ...formData, 'visName': e.target.value })}
-                    placeholder=""
-                    value={formData.visName}
-                />
-                <br></br>
-                <label className="p-text">Email:</label>
-                <input
-                    onChange={e => setFormData({ ...formData, 'visEmail': e.target.value })}
-                    placeholder=""
-                    value={formData.visEmail}
-                />
-                <br></br>
+            <span>
+                <div>
+                    <label className="p-text">Do you have any hobbies/activities outside of work you dedicate a
+                        significant amount of time to? If Yes, please list them.</label>
+                    <input required
+                        onChange={e => setFormData({ ...formData, 'p_answer1': e.target.value })}
+                        placeholder=""
+                        value={formData.p_answer1}
+                    />
+                    <br></br>
+                </div>
+                <div>
+                    <label className="p-text">If you answered yes to the previous question, do you consider
+                        yourself "great" at any of them? If yes, please detail why. If no, please write N/A.</label>
+                    <input required
+                        onChange={e => setFormData({ ...formData, 'p_answer2': e.target.value })}
+                        placeholder=""
+                        value={formData.p_answer2}
+                    />
+                    <br></br>
+                </div>
+                <div>
+                    <label className="p-text">Tell us about a time you were singled out by a co-worker/team member
+                        or superior for the quality of your work, and what effect it had on you. If this has happened more than
+                        once, you can provide multiple examples.</label>
+                    <input required
+                        onChange={e => setFormData({ ...formData, 'p_answer3': e.target.value })}
+                        placeholder=""
+                        value={formData.p_answer3}
+                    />
+                    <br></br>
+                </div>
+                <div>
+                    <label className="p-text">Do you find yourself often speaking too quickly or too
+                        slowly?</label>
+                    <input required
+                        onChange={e => setFormData({ ...formData, 'p_answer4': e.target.value })}
+                        placeholder=""
+                        value={formData.p_answer4}
+                    />
+                    <br></br>
+                </div>
+                <div>
+                    <label className="p-text">How many hours do you sleep on average during weeknights?</label>
+                    <input required
+                        onChange={e => setFormData({ ...formData, 'p_answer5': e.target.value })}
+                        placeholder=""
+                        value={formData.p_answer5}
+                    />
+                    <br></br>
+                </div>
+                <div>
+                    <label className="p-text">Do you have any "vices?" If so, please elaborate.</label>
+                    <input required
+                        onChange={e => setFormData({ ...formData, 'p_answer6': e.target.value })}
+                        placeholder=""
+                        value={formData.p_answer6}
+                    />
+                    <br></br>
+                </div>
+                <div>
+                    <label className="p-text">Please Enter Your Full Name:</label>
+                    <input required
+                        onChange={e => setFormData({ ...formData, 'visName': e.target.value })}
+                        placeholder=""
+                        value={formData.visName}
+                    />
+                    <br></br>
+                </div>
+                <div>
+                    <label className="p-text">Also Kindly Enter Your Email:</label>
+                    <input required
+                        onChange={e => setFormData({ ...formData, 'visEmail': e.target.value })}
+                        placeholder=""
+                        value={formData.visEmail}
+                    />
+                    <br></br>
+                </div>
 
                 <button type="submit" onClick={createEntry}>Submit Assessment</button>
-            </div>
+            </span>
         </div>
     );
 }
