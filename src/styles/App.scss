@@ -2,94 +2,217 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cantarell&family=Chakra+Petch:wght@300;400&family=Play&family=Rajdhani:wght@300;400&family=Saira+Condensed:wght@100;200&family=Source+Code+Pro:wght@200;300&display=swap');
 
-.p-text {
-  width: 80%;
-}
-
-.user-input-field {
-  display: none;
-  @include partial.container-styling();
-  @include partial.container-background();
-
-  textarea {
-    resize: none;
+/* for all screens larger than a tablet */
+@media screen and (min-width: 769px) {
+  .p-text {
+    width: 80%;
   }
 
-  div {
-    margin-top: .2em;
-    margin-bottom: .2em;
+  .user-input-field {
+    display: none;
+    @include partial.container-styling();
+    @include partial.container-background();
+
+    textarea {
+      resize: none;
+    }
+
+    div {
+      margin-top: .2em;
+      margin-bottom: .2em;
+      flex-direction: column;
+    }
+  }
+
+  .cp-field {
+    display: none;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    margin-right: 10em;
+    align-items: center;
+  }
+
+  .AdminTerminal {
+    margin: auto;
+    display: flex;
     flex-direction: column;
+    padding-left: 1em;
+    padding-right: 1em;
+    overflow-y: hidden;
+  }
+
+  .admin-terminal-h1 {
+    margin-top: 0;
+    margin-bottom: 0.35em;
+  }
+
+  .mc-fetch-visitors {
+    overflow: scroll;
+    height: 20em;
+    background-color: lighten($color: rgb(184, 184, 184), $amount: 10);
+    padding-left: 2em;
+  }
+
+  .delete-btn {
+    background-color: #d7000087;
+    border-color: #8b0000ad;
+    color: #7c0000;
+    height: 2em;
+  }
+
+  amplify-section {
+    --font-family: 'Inconsolata', monospace;
+    --amplify-font-family: $typography-font-family;
+    --background-color: var(--amplify-background-color);
+  }
+
+  .section {
+    position: relative;
+    margin-bottom: var(--margin-bottom, 20px);
+    background-color: var(--background-color);
+    padding: var(--padding, 35px 40px);
+    text-align: left;
+    display: inline-block;
+    -webkit-box-shadow: var(--box-shadow, 1px 1px 4px 0 rgba(0, 0, 0, 0.15));
+    box-shadow: var(--box-shadow, 1px 1px 4px 0 rgba(0, 0, 0, 0.15));
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Inconsolata', monospace;
+    width: 100%;
+    min-width: var(--min-width, 20rem);
+  }
+
+  amplify-authenticator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Inconsolata', monospace;
+    min-width: 80vw;
+    padding: 10vmin;
+    --amplify-font-family: $typography-font-family;
+    --amplify-background-color: rgb(41, 41, 41) !important;
+    padding: 0;
+    padding-left: 8em !important;
+  }
+
+  .hydrated {}
+
+  .signout {
+    padding: 2em;
   }
 }
 
-.cp-field {
-  display: none;
-}
+// *******************************************************************************************************************************
+// *******************************************************************************************************************************
+// *******************************************************************************************************************************
+// *******************************************************************************************************************************
+/*              media for screens tablet-size and smaller             */
+// *******************************************************************************************************************************
+// *******************************************************************************************************************************
+// *******************************************************************************************************************************
+// *******************************************************************************************************************************
+@media screen and (max-width: 769px) {
+  .p-text {
+    width: 80%;
+  }
 
-.row {
-  display: flex;
-  flex-direction: row;
-  margin-right: 10em;
-  align-items: center;
-}
+  .user-input-field {
+    display: none;
+    @include partial.container-styling();
+    @include partial.container-background();
 
-.AdminTerminal {
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  padding-left: 1em;
-  padding-right: 1em;
-}
+    textarea {
+      resize: none;
+    }
 
-.admin-terminal-h1 {
-  margin-top: 0;
-  margin-bottom: 0.35em;
-}
+    div {
+      margin-top: .2em;
+      margin-bottom: .2em;
+      flex-direction: column;
+    }
+  }
 
-.mc-fetch-visitors {
-  overflow: scroll;
-  height: 20em;
-  background-color: lighten($color: rgb(184, 184, 184), $amount: 10);
-  padding-left: 2em;
-}
+  .cp-field {
+    display: none;
+  }
 
-.delete-btn {
-  background-color: #d7000087;
-  border-color: #8b0000ad;
-  color: #7c0000;
-  height: 2em;
-}
+  .row {
+    display: flex;
+    flex-direction: row;
+    margin-right: 10em;
+    align-items: center;
+  }
 
-amplify-section {
-  --font-family: 'Inconsolata', monospace;
-  --amplify-font-family: $typography-font-family;
-  --background-color: var(--amplify-background-color);
-}
+  .AdminTerminal {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding-left: 1em;
+    padding-right: 1em;
+    overflow-y: hidden;
+  }
 
-.section {
-  position: relative;
-  margin-bottom: var(--margin-bottom, 20px);
-  background-color: var(--background-color);
-  padding: var(--padding, 35px 40px);
-  text-align: left;
-  display: inline-block;
-  -webkit-box-shadow: var(--box-shadow, 1px 1px 4px 0 rgba(0, 0, 0, 0.15));
-  box-shadow: var(--box-shadow, 1px 1px 4px 0 rgba(0, 0, 0, 0.15));
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  font-family: 'Inconsolata', monospace;
-  width: 100%;
-  min-width: var(--min-width, 20rem);
-}
+  .admin-terminal-h1 {
+    margin-top: 0;
+    margin-bottom: 0.35em;
+    font-size: 1.7em;
+  }
 
-amplify-authenticator {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  font-family: 'Inconsolata', monospace;
-  min-width: 80vw;
-  padding: 10vmin;
-  --amplify-font-family: $typography-font-family;
-  --amplify-primary-color: #faa433;
+  .mc-fetch-visitors {
+    overflow: scroll;
+    height: 20em;
+    background-color: lighten($color: rgb(184, 184, 184), $amount: 10);
+    padding-left: 2em;
+  }
+
+  .delete-btn {
+    background-color: #d7000087;
+    border-color: #8b0000ad;
+    color: #7c0000;
+    height: 2em;
+  }
+
+  amplify-section {
+    --font-family: 'Inconsolata', monospace;
+    --amplify-font-family: $typography-font-family;
+    --background-color: var(--amplify-background-color);
+  }
+
+  .section {
+    position: relative;
+    margin-bottom: var(--margin-bottom, 20px);
+    background-color: var(--background-color);
+    padding: var(--padding, 35px 40px);
+    text-align: left;
+    display: inline-block;
+    -webkit-box-shadow: var(--box-shadow, 1px 1px 4px 0 rgba(0, 0, 0, 0.15));
+    box-shadow: var(--box-shadow, 1px 1px 4px 0 rgba(0, 0, 0, 0.15));
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Inconsolata', monospace;
+    width: 100%;
+    min-width: var(--min-width, 20rem);
+  }
+
+  amplify-authenticator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Inconsolata', monospace;
+    min-width: 80vw;
+    padding: 10vmin;
+    --amplify-font-family: $typography-font-family;
+    --amplify-primary-color: #faa433;
+    padding: 0;
+    // padding-left: 8em !important;
+  }
+
+  .signout {
+    padding: 2em;
+  }
 }

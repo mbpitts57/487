@@ -4,6 +4,10 @@ import { ModelInit, MutableModel, PersistentModelConstructor } from "@aws-amplif
 
 
 
+type EntryMetaData = {
+  readOnlyFields: 'createdAt' | 'updatedAt';
+}
+
 type PerAssessmentMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
@@ -16,11 +20,28 @@ type VisitorMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
 
+export declare class Entry {
+  readonly id: string;
+  readonly visName?: string;
+  readonly visEmail?: string;
+  readonly p_answer1?: string;
+  readonly p_answer2?: string;
+  readonly p_answer3?: string;
+  readonly p_answer4?: string;
+  readonly p_answer5?: string;
+  readonly p_answer6?: string;
+  readonly createdAt?: string;
+  readonly updatedAt?: string;
+  constructor(init: ModelInit<Entry, EntryMetaData>);
+  static copyOf(source: Entry, mutator: (draft: MutableModel<Entry, EntryMetaData>) => MutableModel<Entry, EntryMetaData> | void): Entry;
+}
+
 export declare class PerAssessment {
   readonly id: string;
   readonly p_answer1: string;
   readonly p_answer2: string;
   readonly p_answer3: string;
+  readonly p_answer4?: string;
   readonly p_answer5: string;
   readonly p_answer6: string;
   readonly createdAt?: string;

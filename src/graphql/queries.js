@@ -30,28 +30,40 @@ export const listVisitors = /* GraphQL */ `
     }
   }
 `;
-export const getNote = /* GraphQL */ `
-  query GetNote($id: ID!) {
-    getNote(id: $id) {
+export const getEntry = /* GraphQL */ `
+  query GetEntry($id: ID!) {
+    getEntry(id: $id) {
       id
-      name
-      description
+      visName
+      visEmail
+      p_answer1
+      p_answer2
+      p_answer3
+      p_answer4
+      p_answer5
+      p_answer6
       createdAt
       updatedAt
     }
   }
 `;
-export const listNotes = /* GraphQL */ `
-  query ListNotes(
-    $filter: ModelNoteFilterInput
+export const listEntrys = /* GraphQL */ `
+  query ListEntrys(
+    $filter: ModelEntryFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listNotes(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listEntrys(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        name
-        description
+        visName
+        visEmail
+        p_answer1
+        p_answer2
+        p_answer3
+        p_answer4
+        p_answer5
+        p_answer6
         createdAt
         updatedAt
       }

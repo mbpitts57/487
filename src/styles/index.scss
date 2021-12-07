@@ -9,321 +9,666 @@ html {
   overflow-x: hidden;
 }
 
-// --- index styling -----------------------------------------------------------------------------------
+/* for all screens larger than a tablet */
+@media screen and (min-width: 769px) {
+  // --- index styling -----------------------------------------------------------------------------------
 
-hr {
-  border: 1px solid #dbdbdb;
-  fill: #dbdbdb;
-  margin-bottom: 25px;
-  width: 95%;
-}
-
-.index-page {
-  display: block;
-}
-
-.logo-img {
-  max-height: 2.2em;
-  max-width: 2.2em;
-  background: rgb(155, 155, 155);
-  margin-left: .6em;
-  border-style: outset;
-  border-width: 2px;
-  border-color: rgb(180, 180, 180);
-}
-
-.header-div {
-  font-family: 'Play', sans-serif;
-  display: flex;
-  padding: 0px 20px;
-  color: white;
-  margin-top: 1em !important;
-  font-size: 1.8em;
-  align-items: center;
-  @include partial.container-background();
-}
-
-.logo-evariste-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.span-landing {
-  @include partial.container-background();
-  @include partial.container-styling();
-  font-size: 1.8em;
-  box-sizing: border-box;
-  padding: 1em;
-  color: rgb(56, 64, 75);
-  margin-bottom: 8em !important;
-
-  button {
-    height: 1.6em;
-    width: 10em;
-    font-size: .5em;
-    margin-top: 1.5em;
-    font-size: .8em;
-  }
-}
-
-.personality-assessment {
-  display: none;
-  @include partial.container-background();
-  @include partial.container-styling();
-}
-
-.cognitive-assessment {
-  display: none;
-  @include partial.container-background();
-  @include partial.container-styling();
-}
-
-.p-assessment-h1 {
-  color: rgb(81, 91, 105);
-}
-
-.text-muted {
-  font-size: .9em;
-}
-
-.p-text {
-  width: 80%;
-}
-
-.textarea-answer {
-  margin-top: 2em;
-  width: 65%;
-  height: 75px;
-  resize: none;
-}
-
-.radio-btn-flex {
-  margin-top: .6em;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-
-  div {
-    display: flex;
-    flex-direction: row;
-  }
-}
-
-.checkbox-btn-flex {
-  margin-top: .6em;
-  display: flex;
-  flex-direction: row;
-  text-align: left;
-
-  div {
-    display: flex;
-    flex-direction: row;
-    vertical-align: bottom;
-    margin: 0;
-    padding: 0;
-  }
-}
-
-.continue-btn {
-  margin-top: 1.2em;
-}
-
-.user-input-field {
-  display: none;
-  @include partial.container-styling();
-  @include partial.container-background();
-  margin-bottom: 2em;
-
-  div {
-    margin-top: .2em;
-    margin-bottom: .2em;
-    flex-direction: column;
-  }
-}
-
-.user-input-field-2 {
-  display: none;
-  @include partial.container-styling();
-  margin-bottom: 2em;
-
-  div {
-    margin-top: .2em;
-    margin-bottom: .2em;
-    flex-direction: column;
-  }
-}
-
-.footer-bar {
-  background: rgb(41, 41, 41);
-  width: 100%;
-  margin: 0;
-  height: 3em;
-}
-
-.footer-text {
-  color: white;
-}
-
-.footer-text-flex {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-
-  // styles 'email/joshua@system9.io'
-  div {
-    display: flex;
-    flex-direction: row;
-    margin-right: 58em !important;
-    justify-content: flex-start;
+  hr {
+    border: 1px solid #dbdbdb;
+    fill: #dbdbdb;
+    margin-bottom: 25px;
+    width: 95%;
   }
 
-  // styles 'administrators' link
-  a {
-
-    text-decoration: none;
-    padding: 0;
-    margin-left: 0em !important;
-
-  }
-}
-
-.transparent-btn {
-  display: flex;
-  flex-direction: row;
-  font-size: 1em;
-  background: none;
-  font-family: 'Inconsolata', monospace;
-  color: white;
-  border: none;
-  padding: 0px;
-  align-items: center;
-}
-
-.transparent-btn:hover {
-  cursor: pointer;
-}
-
-// --- admin terminal styling --------------------------------------------------------
-
-.admin-login-container {
-  display: flex;
-  margin-top: 50px !important;
-  padding: 20px;
-  align-items: center;
-  flex-direction: column;
-  margin-bottom: 50px !important;
-  @include partial.container-background();
-
-  div {
-    padding: 20px;
-    width: 50%;
-    margin: auto;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  .index-page {
+    display: block;
   }
 
-  span {
-    display: flex;
-    padding: 20px;
-    width: 50%;
-    margin: auto;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-  }
-}
-
-button {
-  font-family: 'Inconsolata', monospace;
-}
-
-.admin-terminal {
-  display: none;
-}
-
-.admin-terminal-container {
-  display: flex;
-  width: 60em;
-  margin-left: 10em;
-  margin-right: 10em;
-  margin-bottom: 10em;
-  box-sizing: border-box;
-  background: rgb(184, 184, 184);
-  box-shadow: 10px 10px 2px rgb(92, 103, 119);
-  border-style: outset;
-  border-width: 5px;
-  border-color: rgb(206, 206, 206);
-  flex-direction: column;
-  height: 35em;
-}
-
-.admin-terminal-title {
-  font-size: 3.5em;
-  padding: 0.15em;
-  margin: 0.15em;
-  background: rgb(17, 17, 17);
-  color: white;
-}
-
-.admin-terminal-flex {
-  display: flex;
-  flex-direction: column;
-}
-
-.justify-content-center {
-  justify-content: center;
-  margin: 1em;
-  text-decoration: none;
-  font-size: 1.5em;
-}
-
-.admin-terminal-content {
-  display: flex;
-  flex-direction: row;
-}
-
-.admin-terminal-sidebar {
-  display: flex;
-  flex-direction: column;
-  margin-left: 1%;
-  margin-top: 1%;
-  background: none;
-
-  button {
-    height: 6em;
-    width: 6em;
-    margin: .5em;
-    background: rgb(206, 206, 206);
+  .logo-img {
+    max-height: 2.2em;
+    max-width: 2.2em;
+    background: #a19d9c;
+    margin-left: 0.6em;
     border-style: outset;
-    border-width: 2px;
-    border-color: rgb(206, 206, 206);
+    border-width: 4px;
+    border-color: #c6c4c3;
+  }
+
+  .header-div {
+    font-family: 'Play', sans-serif;
+    display: flex;
+    padding: 0px 20px;
+    color: white;
+    margin-top: 1em !important;
+    font-size: 1.6em;
+    align-items: center;
+    @include partial.container-background();
+  }
+
+  .logo-evariste-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .span-landing {
+    @include partial.container-background();
+    @include partial.container-styling();
+    font-size: 1.5em;
+    box-sizing: border-box;
+    padding: 1.2em;
+    color: rgb(56, 64, 75);
+    margin-bottom: 8em !important;
+
+    button {
+      height: 1.6em;
+      width: 10em;
+      font-size: .5em;
+      margin-top: 1.5em;
+      font-size: .8em;
+    }
+  }
+
+  .personality-assessment {
+    display: none;
+    @include partial.container-background();
+    @include partial.container-styling();
+  }
+
+  .cognitive-assessment {
+    display: none;
+    @include partial.container-background();
+    @include partial.container-styling();
+  }
+
+  .p-assessment-h1 {
+    color: rgb(81, 91, 105);
+  }
+
+  .text-muted {
+    font-size: .9em;
+  }
+
+  .p-text {
+    width: 80%;
+  }
+
+  .textarea-answer {
+    margin-top: 2em;
+    width: 65%;
+    height: 75px;
+    resize: none;
+  }
+
+  .radio-btn-flex {
+    margin-top: .6em;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    div {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  .checkbox-btn-flex {
+    margin-top: .6em;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+
+    div {
+      display: flex;
+      flex-direction: row;
+      vertical-align: bottom;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .continue-btn {
+    margin-top: 1.2em;
+  }
+
+  .user-input-field {
+    display: none;
+    @include partial.container-styling();
+    @include partial.container-background();
+    margin-bottom: 2em;
+
+    div {
+      margin-top: .2em;
+      margin-bottom: .2em;
+      flex-direction: column;
+    }
+  }
+
+  .user-input-field-2 {
+    display: none;
+    @include partial.container-styling();
+    margin-bottom: 2em;
+
+    div {
+      margin-top: .2em;
+      margin-bottom: .2em;
+      flex-direction: column;
+    }
+  }
+
+  .footer-bar {
+    background: rgb(41, 41, 41);
+    width: 100%;
+    margin: 0;
+    height: 3em;
+  }
+
+  .footer-text {
+    color: white;
+  }
+
+  .footer-text-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    // styles 'email/joshua@system9.io'
+    div {
+      display: flex;
+      flex-direction: row;
+      margin-right: 58em !important;
+      justify-content: flex-start;
+    }
+
+    // styles 'administrators' link
+    a {
+
+      text-decoration: none;
+      padding: 0;
+      margin-left: 0em !important;
+
+    }
+  }
+
+  .transparent-btn {
+    display: flex;
+    flex-direction: row;
+    font-size: 1em;
+    background: none;
+    font-family: 'Inconsolata', monospace;
+    color: white;
+    border: none;
+    padding: 0px;
+    align-items: center;
+  }
+
+  .transparent-btn:hover {
+    cursor: pointer;
+  }
+
+  // --- admin terminal styling --------------------------------------------------------
+
+  .admin-login-container {
+    display: flex;
+    margin-top: 50px !important;
+    padding: 20px;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 50px !important;
+    @include partial.container-background();
+
+    div {
+      padding: 20px;
+      width: 50%;
+      margin: auto;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    span {
+      display: flex;
+      padding: 20px;
+      width: 50%;
+      margin: auto;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+    }
+  }
+
+  button {
     font-family: 'Inconsolata', monospace;
   }
+
+  .admin-terminal {
+    display: none;
+  }
+
+  .admin-terminal-container {
+    display: flex;
+    width: 65em;
+    margin-left: 10em;
+    margin-right: 10em;
+    margin-bottom: 10em;
+    box-sizing: border-box;
+    background: #b8b8b8;
+    box-shadow: 10px 10px 2px #5c6777;
+    border-style: outset;
+    border-width: 5px;
+    border-color: #cecece;
+    flex-direction: column;
+    height: 32em;
+    position: relative;
+    right: 150px;
+    margin-top: 3em;
+  }
+
+  .admin-terminal-title {
+    font-size: 3.5em;
+    padding: 0.15em;
+    margin: 0.15em;
+    background: rgb(41, 41, 41);
+    color: white;
+  }
+
+  .admin-terminal-flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .justify-content-center {
+    justify-content: center;
+    margin: 1em;
+    text-decoration: none;
+    font-size: 1.5em;
+    padding-left: 5.6em;
+  }
+
+  .admin-terminal-content {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .admin-terminal-sidebar {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1%;
+    margin-top: 1%;
+    background: none;
+
+    button {
+      height: 6em;
+      width: 6em;
+      margin: .5em;
+      background: rgb(206, 206, 206);
+      border-style: outset;
+      border-width: 2px;
+      border-color: rgb(206, 206, 206);
+      font-family: 'Inconsolata', monospace;
+    }
+  }
+
+  .admin-terminal-main {
+    margin-left: 1% !important;
+    margin: .5em;
+    margin-right: 1%;
+    margin-top: 1%;
+  }
+
+  .main-user-results {
+    display: flex;
+  }
+
+  .main-analytics {
+    display: none;
+  }
+
+  .main-acct-mgmt {
+    display: none;
+  }
+
+  .main-advanced {
+    display: none;
+  }
 }
 
-.admin-terminal-main {
-  margin-left: 1% !important;
-  margin: .5em;
-  margin-right: 1%;
-  margin-top: 1%;
-}
+// *******************************************************************************************************************************
+// *******************************************************************************************************************************
+// *******************************************************************************************************************************
+// *******************************************************************************************************************************
+/*              media for screens tablet-size and smaller             */
+// *******************************************************************************************************************************
+// *******************************************************************************************************************************
+// *******************************************************************************************************************************
+// *******************************************************************************************************************************
+@media screen and (max-width: 769px) {
+  // --- index styling -----------------------------------------------------------------------------------
 
-.main-user-results {
-  display: flex;
-}
+  hr {
+    border: 1px solid #dbdbdb;
+    fill: #dbdbdb;
+    margin-bottom: 25px;
+    width: 95%;
+  }
 
-.main-analytics {
-  display: none;
-}
+  .index-page {
+    display: block;
+  }
 
-.main-acct-mgmt {
-  display: none;
-}
+  .logo-img {
+    max-height: 2.2em;
+    max-width: 2.2em;
+    background: #a19d9c;
+    margin-left: 0.6em;
+    border-style: outset;
+    border-width: 4px;
+    border-color: #c6c4c3;
+  }
 
-.main-advanced {
-  display: none;
+  .header-div {
+    font-family: 'Play', sans-serif;
+    display: flex;
+    padding: 0px 20px;
+    color: white;
+    margin-top: 1em !important;
+    font-size: 1.05em;
+    align-items: center;
+    @include partial.container-background();
+    width: 75% !important;
+  }
+
+  .logo-evariste-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .span-landing {
+    @include partial.container-background();
+    @include partial.container-styling();
+    font-size: 1em;
+    box-sizing: border-box;
+    padding: 1.2em;
+    color: rgb(56, 64, 75);
+    margin-bottom: 21.5em !important;
+    width: 75% !important;
+
+    button {
+      height: 1.6em;
+      width: 10em;
+      font-size: .5em;
+      margin-top: 1.5em;
+      font-size: .8em;
+    }
+  }
+
+  .personality-assessment {
+    display: none;
+    @include partial.container-background();
+    @include partial.container-styling();
+  }
+
+  .cognitive-assessment {
+    display: none;
+    @include partial.container-background();
+    @include partial.container-styling();
+  }
+
+  .p-assessment-h1 {
+    color: rgb(81, 91, 105);
+  }
+
+  .text-muted {
+    font-size: .9em;
+  }
+
+  .p-text {
+    width: 80%;
+  }
+
+  .textarea-answer {
+    margin-top: 2em;
+    width: 65%;
+    height: 75px;
+    resize: none;
+  }
+
+  .radio-btn-flex {
+    margin-top: .6em;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    div {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  .checkbox-btn-flex {
+    margin-top: .6em;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+
+    div {
+      display: flex;
+      flex-direction: row;
+      vertical-align: bottom;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .continue-btn {
+    margin-top: 1.2em;
+  }
+
+  .user-input-field {
+    display: none;
+    @include partial.container-styling();
+    @include partial.container-background();
+    margin-bottom: 2em;
+
+    div {
+      margin-top: .2em;
+      margin-bottom: .2em;
+      flex-direction: column;
+    }
+  }
+
+  .user-input-field-2 {
+    display: none;
+    @include partial.container-styling();
+    margin-bottom: 2em;
+
+    div {
+      margin-top: .2em;
+      margin-bottom: .2em;
+      flex-direction: column;
+    }
+  }
+
+  .footer-bar {
+    background: rgb(41, 41, 41);
+    width: 100%;
+    margin: 0;
+    height: 3em;
+  }
+
+  .footer-text {
+    color: white;
+  }
+
+  .footer-text-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    // styles 'email/joshua@system9.io'
+    div {
+      display: flex;
+      flex-direction: row;
+      margin-right: 35% !important;
+      justify-content: flex-start;
+    }
+
+    // styles 'administrators' link
+    a {
+      text-decoration: none;
+      padding: 0;
+      margin-left: 0em !important;
+
+    }
+  }
+
+  .transparent-btn {
+    display: flex;
+    flex-direction: row;
+    font-size: 1em;
+    background: none;
+    font-family: 'Inconsolata', monospace;
+    color: white;
+    border: none;
+    padding: 0px;
+    align-items: center;
+  }
+
+  .transparent-btn:hover {
+    cursor: pointer;
+  }
+
+  // --- admin terminal styling --------------------------------------------------------
+
+  .admin-login-container {
+    display: flex;
+    margin-top: 50px !important;
+    padding: 20px;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 50px !important;
+    @include partial.container-background();
+    width: 75% !important;
+
+    div {
+      padding: 20px;
+      width: 50%;
+      margin: auto;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    span {
+      display: flex;
+      padding: 20px;
+      width: 50%;
+      margin: auto;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+    }
+  }
+
+  button {
+    font-family: 'Inconsolata', monospace;
+  }
+
+  .admin-terminal {
+    display: none;
+  }
+
+  .admin-terminal-container {
+    display: flex;
+    width: 80%;
+    // margin-left: 10em;
+    // margin-right: 10em;
+    margin: auto;
+    margin-bottom: 10em;
+    box-sizing: border-box;
+    background: #b8b8b8;
+    box-shadow: 10px 10px 2px #5c6777;
+    border-style: outset;
+    border-width: 5px;
+    border-color: #cecece;
+    flex-direction: column;
+    height: 32em;
+    // position: relative;
+    // right: 150px;
+    margin-top: 3em;
+  }
+
+  .admin-terminal-title {
+    font-size: 1.7em;
+    padding: 0.15em;
+    margin: 0.15em;
+    background: rgb(41, 41, 41);
+    color: white;
+  }
+
+  .admin-terminal-flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .justify-content-center {
+    justify-content: center;
+    margin: 1em;
+    text-decoration: none;
+    font-size: 1.5em;
+    padding-left: 5.6em;
+  }
+
+  .admin-terminal-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .admin-terminal-sidebar {
+    display: flex;
+    flex-direction: row;
+    margin-left: 1%;
+    margin-top: 1%;
+    background: none;
+    justify-content: center;
+
+    button {
+      height: 3em;
+      width: 7em;
+      margin: .5em;
+      background: rgb(206, 206, 206);
+      border-style: outset;
+      border-width: 2px;
+      border-color: rgb(206, 206, 206);
+      font-family: 'Inconsolata', monospace;
+    }
+  }
+
+  .admin-terminal-main {
+    margin-left: 1% !important;
+    margin: .5em;
+    margin-right: 1%;
+    margin-top: 1%;
+  }
+
+  .main-user-results {
+    display: flex;
+  }
+
+  .main-analytics {
+    display: none;
+  }
+
+  .main-acct-mgmt {
+    display: none;
+  }
+
+  .main-advanced {
+    display: none;
+  }
 }
