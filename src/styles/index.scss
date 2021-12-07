@@ -9,6 +9,11 @@ html {
   overflow-x: hidden;
 }
 
+main {
+  // flex-grow: 1;
+  min-height: 76vh;
+}
+
 /* for all screens larger than a tablet */
 @media screen and (min-width: 769px) {
   // --- index styling -----------------------------------------------------------------------------------
@@ -21,7 +26,9 @@ html {
   }
 
   .index-page {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
   }
 
   .logo-img {
@@ -116,7 +123,7 @@ html {
   .checkbox-btn-flex {
     margin-top: .6em;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     text-align: left;
 
     div {
@@ -173,18 +180,31 @@ html {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding-left: 1vw;
+    padding-right: 1vw;
+
+    // bottom: 0px;
+    // padding-left: 1vh;
+    // color: white;
+    // background-color: black;
+    // display: flex;
+    // flex-direction: column;
+    // left: 0;
+    // width: 100%;
+    // height: auto;
+    // overflow: hidden;
+    // font-size: .9em;
 
     // styles 'email/joshua@system9.io'
     div {
       display: flex;
       flex-direction: row;
-      margin-right: 58em !important;
+      margin-right: 68vw !important;
       justify-content: flex-start;
     }
 
     // styles 'administrators' link
     a {
-
       text-decoration: none;
       padding: 0;
       margin-left: 0em !important;
@@ -390,7 +410,7 @@ html {
   .span-landing {
     @include partial.container-background();
     @include partial.container-styling();
-    font-size: 1em;
+    font-size: .8em;
     box-sizing: border-box;
     padding: 1.2em;
     color: rgb(56, 64, 75);
@@ -410,12 +430,17 @@ html {
     display: none;
     @include partial.container-background();
     @include partial.container-styling();
+    font-size: .8em;
+    width: 75% !important;
   }
 
   .cognitive-assessment {
     display: none;
     @include partial.container-background();
     @include partial.container-styling();
+    font-size: .8em;
+    width: 75% !important;
+
   }
 
   .p-assessment-h1 {
@@ -423,7 +448,7 @@ html {
   }
 
   .text-muted {
-    font-size: .9em;
+    font-size: .7em;
   }
 
   .p-text {
@@ -452,7 +477,7 @@ html {
   .checkbox-btn-flex {
     margin-top: .6em;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     text-align: left;
 
     div {
@@ -494,6 +519,7 @@ html {
   }
 
   .footer-bar {
+    margin-top: auto;
     background: rgb(41, 41, 41);
     width: 100%;
     margin: 0;
@@ -514,7 +540,7 @@ html {
     div {
       display: flex;
       flex-direction: row;
-      margin-right: 35% !important;
+      margin-right: 9vw !important;
       justify-content: flex-start;
     }
 
@@ -523,7 +549,6 @@ html {
       text-decoration: none;
       padding: 0;
       margin-left: 0em !important;
-
     }
   }
 

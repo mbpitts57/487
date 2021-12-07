@@ -10,6 +10,10 @@ html {
   overflow-x: hidden;
 }
 
+main {
+  min-height: 76vh;
+}
+
 /* for all screens larger than a tablet */
 @media screen and (min-width: 769px) {
   hr {
@@ -20,7 +24,9 @@ html {
   }
 
   .index-page {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
   }
 
   .logo-img {
@@ -160,7 +166,7 @@ html {
   .checkbox-btn-flex {
     margin-top: 0.6em;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     text-align: left;
   }
   .checkbox-btn-flex div {
@@ -232,11 +238,13 @@ html {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding-left: 1vw;
+    padding-right: 1vw;
   }
   .footer-text-flex div {
     display: flex;
     flex-direction: row;
-    margin-right: 58em !important;
+    margin-right: 68vw !important;
     justify-content: flex-start;
   }
   .footer-text-flex a {
@@ -456,7 +464,7 @@ html {
     align-items: center;
     flex-direction: column;
     margin-bottom: 50px !important;
-    font-size: 1em;
+    font-size: 0.8em;
     box-sizing: border-box;
     padding: 1.2em;
     color: #38404b;
@@ -488,6 +496,8 @@ html {
     align-items: center;
     flex-direction: column;
     margin-bottom: 50px !important;
+    font-size: 0.8em;
+    width: 75% !important;
   }
 
   .cognitive-assessment {
@@ -507,6 +517,8 @@ html {
     align-items: center;
     flex-direction: column;
     margin-bottom: 50px !important;
+    font-size: 0.8em;
+    width: 75% !important;
   }
 
   .p-assessment-h1 {
@@ -514,7 +526,7 @@ html {
   }
 
   .text-muted {
-    font-size: 0.9em;
+    font-size: 0.7em;
   }
 
   .p-text {
@@ -542,7 +554,7 @@ html {
   .checkbox-btn-flex {
     margin-top: 0.6em;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     text-align: left;
   }
   .checkbox-btn-flex div {
@@ -599,6 +611,7 @@ html {
   }
 
   .footer-bar {
+    margin-top: auto;
     background: #292929;
     width: 100%;
     margin: 0;
@@ -618,7 +631,7 @@ html {
   .footer-text-flex div {
     display: flex;
     flex-direction: row;
-    margin-right: 35% !important;
+    margin-right: 9vw !important;
     justify-content: flex-start;
   }
   .footer-text-flex a {

@@ -10,23 +10,6 @@ type Entry @model @auth(rules: [{allow: public}]) {
   p_answer6: String
 }
 
-type PerAssessment @model @auth(rules: [{allow: public}]) {
-  id: ID!
-  p_answer1: String!
-  p_answer2: String!
-  p_answer3: String!
-  p_answer4: String
-  p_answer5: String!
-  p_answer6: String!
-}
-
-type Admin @model @auth(rules: [{allow: public}]) {
-  id: ID!
-  adminEmail: AWSEmail!
-  adminPass: String!
-  adminLevel: Int!
-}
-
 type Visitor @model @auth(rules: [{allow: public}]) {
   id: ID!
   visName: String!
